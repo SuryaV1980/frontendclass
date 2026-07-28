@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <main>
+    <h1>SLA Student Registration Form</h1>
+    <form method="post">
+      <label for="">Full Name:</label>
+        <input type="text" name="Username" placeholder="Enter your Name" required/> 
+        <br />
+        <br />
+      <label for="">Age:</label>
+        <input type="number" name="Userage" placeholder="Enter your age" required/>
+        <br>
+        <br>
+      <label for="">Email:</label>
+        <input type="email" name="UserEmail" placeholder="Enter you Email" required>
+        <br>
+        <br>
+        <label for="">Password:</label>
+        <input type="password" name="Userpassword" placeholder="Enter your Password" required>
+        <br>
+        <br>
+        <label for="">Gender:</label>
+        <input type="radio" name="UserGender">Male
+        <input type="radio" name="UserGender">Female
+        <input type="radio" name="UserGender">Other
+        <br>
+        <br>
+        <label for="" >Course:</label>
+        <select name="Course" id=""> 
+        <option value="">--Select Course--</option>
+        <option value="1">Frontend Developer</option>
+        <option value="2">Backend Developer</option>
+        <option value="3">Full Stack Developer</option>
+        <option value="4">Cyber Security</option>
+        </select>
+        <br>
+        <br>
+        <label for="">Address:</label>
+        <textarea rows="4" cols="30" placeholder="Enter your Address"></textarea>
+        <br>
+        <br>
+        <label for="">Preferred Contact:</label>
+        <input type="radio" name="Contact">Email
+        <input type="radio" name="Contact">Phone
+        <br>
+        <br>
+        <Button>Submit</Button>
+        <button>Reset</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering College Admission Portal.</title>
+</head>
+<body>
+  <main>
+    <h1>College Admission Form</h1>
+    <div>
+      <form>
+      <label for="Studentname">Name: </label><br>
+      <input type="text" id="Username" placeholder="Student Name"><br><br>
+
+      <label for="StudentFather" >Father Name: </label><br>
+      <input type="text" id="StudentFather" placeholder="Father Name" required><br><br>
+
+      <label for="StudentMother">Mother Name:</label><br>
+      <input type="text" id="Studentmother" placeholder="Mother Name" required><br><br>
+
+      <label for="Studentemail">Email:</label><br>
+      <input type="email" id="Studentemail" required><br><br>
+
+      <label for="Studentphone"> Phone Number: </label><br>
+      <input type="tel" id="Studentphone" required><br><br>
+
+      <label for="Studentphone">Phone Number: </label><br>
+      <input type="tel" id="Studentphone" required><br><br>
+
+      <label for="StudentDOB">Date of Birth: </label><br>
+      <input type="date" id="StudentDOB" required><br><br>
+
+      <label for="Studentgender">Gender:</label><br>
+      <input type="radio" name="gender" id="Studentgender">Male
+      <input type="radio" name="gender" id="Studentgender">Female
+      <input type="radio" name="gender" id="Studentgender">Transgender
+      <input type="radio" name="gender" id="Studentgender">other <br><br>
+
+      <label for="Studentdepartment">Department</label><br>
+      <select id="Studentdepartment">
+        <option value="">---Select One---</option>
+        <option value="1">BSc Computer Science</option>
+        <option value="2">BSc Computer Science</option>
+        <option value="3">BCA</option>
+        <option value="4">MCA</option> 
+      </select><br><br>
+
+      <label for="Studentpercentage">Percentage: </label><br>
+      <input type="number" id="Studentpercentage" required><br><br>
+
+      <label for="Studentaddress">Address </label><br>
+      <textarea name="Address" id="Studentaddress" rows="4" cols="30" placeholder="Enter your address"></textarea><br><br>
+
+
+      <label for="Register">Passport Size Photo</label><br>
+      <input type="file" value="Register"><br><br>
+
+      <input type="submit" value="Apply">
+      <input type="reset" value="Reset">
+      </form>
+    </div>
+    <br><br>
+    <h2>Student Admission Report</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+        <th>Application ID</th>
+        <th>Student Name</th>
+        <th>Department</th>
+        <th>Percentage</th>
+        <th>Email</th>
+        <th>Admission Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>A101</td>
+        <td>Nora</td>
+        <td>B.Sc Computer Science</td>
+        <td>89%</td>
+        <td>norabill229@gmail.com</td>
+        <td>Approved</td>
+    </tr>
+
+    <tr>
+        <td>A102</td>
+        <td>Clara</td>
+        <td>BCA</td>
+        <td>92%</td>
+        <td>clarajohn203@gmail.com</td>
+        <td>Approved</td>
+    </tr>
+
+    <tr>
+        <td>A103</td>
+        <td>Ivy</td>
+        <td>B.Com</td>
+        <td>76%</td>
+        <td>Ivymorgan010@gmail.com</td>
+        <td>Pending</td>
+    </tr>
+  </tbody>
+</table>
+  </main>
+</body>
+</html>

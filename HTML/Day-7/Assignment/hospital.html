@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apollo Hospital Patient Registration</title>
+</head>
+<body>
+  <main>
+    <h1>Hospital Patient Registration</h1>
+    <div>
+      <form>
+      <label for="Patientid">Enter Your ID: </label><br>
+      <input type="tel" id="Patientid" placeholder="Patient ID" required><br><br>
+
+      <label for="Patientname" >Enter Your Name: </label><br>
+      <input type="text" id="Patientname" placeholder="Patient Name" required><br><br>
+
+      <label for="Patientage">Enter your Age:</label><br>
+      <input type="number" id="Patientage"  placeholder="Patient Age"><br><br>
+
+      <label for="Usergender">Gender:</label><br>
+      <input type="radio" name="gender" id="Usergender">Male
+      <input type="radio" name="gender" id="Usergender">Female
+      <input type="radio" name="gender" id="Usergender">Transgender
+      <input type="radio" name="gender" id="Usergender">other <br><br>
+      
+      <label for="Patientbloodgroup">Gender:</label><br>
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">O+
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">O-
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">A+
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">A-
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">B+
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">B-
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">AB+
+      <input type="radio" name="Bloodgroup" id="Patientbloodgroup">AB-<br><br>
+
+      <label for="Patientdoctor">Enter Your Doctor:</label><br>
+      <input type="text" id="Patientdoctor" placeholder="Doctor Name" ><br><br>
+
+      <label for="PatientAppointment">Appointment Date: </label><br>
+      <input type="date" id="PatientAppointment" ><br><br>
+    
+      <label for="Patientsymptoms">Symptoms</label><br>
+        <input type="checkbox" name="Symptoms" value="fever">Fever
+        <input type="checkbox" name="Symptoms" value="Cough">Cough
+        <input type="checkbox" name="Symptoms" value="Fatigue">Fatigue
+        <input type="checkbox" name="Symptoms" value="Headache">Headache <br><br>
+
+      <label for="Register">Medical Report Upload:</label><br>
+      <input type="file" value="Register"><br><br>
+
+      <input type="submit" value="Apply">
+      <input type="reset" value="Reset">
+      </form>
+    </div>
+  </main>
+<br><br>
+<hr>
+  <section>
+      <h2>Patient Details</h2>
+      <table width="800" height="200" align="center" border="2"  >
+    <thead align="center">
+          <tr>
+            <td>Patient ID</td>
+            <td>Patient Name</td>
+            <td>Doctor</td>
+            <td>Blood Group</td>
+            <td>Appoint Date</td>
+            <td>Status</td>
+          </tr>
+        </thead>
+        <tbody align="center">
+          <tr>
+            <td>10252</td>
+            <td>Eli</td>
+            <td>DR.Steve</td>
+            <td>o+</td>
+            <td>27-06-26</td>
+            <td>Discharge</td>
+          </tr>
+          <tr>
+            <td>10462</td>
+            <td>Nolan</td>
+            <td>DR.Adam</td>
+            <td>A-</td>
+            <td>26-06-26</td>
+            <td>Charge</td>
+          </tr>
+          <tr>
+            <td>54616</td>
+            <td>Miles</td>
+            <td>DR.Maguire</td>
+            <td>A+</td>
+            <td>21-06-26</td>
+            <td>Discharge</td>
+          </tr>
+          <tr>
+            <td>15146</td>
+            <td>Rowan</td>
+            <td>DR.Tobey</td>
+            <td>B+</td>
+            <td>27-06-26</td>
+            <td>Discharge</td>
+          </tr>
+          <tr>
+            <td>65465</td>
+            <td>Jasper</td>
+            <td>DR.Tom</td>
+            <td>AB-</td>
+            <td>30-06-26</td>
+            <td>Charge</td>
+          </tr>
+          <tr>
+            <td>54465</td>
+            <td>Elise</td>
+            <td>Dr.Hanks</td>
+            <td>O-</td>
+            <td>23-06-26</td>
+            <td>Charge</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+</body>
+</html>

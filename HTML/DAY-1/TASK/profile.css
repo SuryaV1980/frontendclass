@@ -1,0 +1,36 @@
+body{
+  background-color: rgb(17, 17, 17);
+  color: white;
+  align-items: center;
+  font-family: segoe UI;
+  font-size: 19px;
+  
+  
+}
+.header-logo{
+  background-color: rgb(238, 28, 36);
+}
+.shady45{
+  display: flex;
+  justify-content: flex-start;
+  width: 10rem;
+  align-items: center;
+  padding:3px 5px;
+
+}
+.shady-logo{
+  width: 5rem;
+  float: right;
+  padding:3px;
+}
+table, th, td{
+ 
+  max-width: 100vh; 
+}
+.eminem-picture{
+  width: 300px;
+
+}
+.link-img{
+  color: white;
+}

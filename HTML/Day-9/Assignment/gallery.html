@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <!--SEO Information-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    body{
+      background-color: rgb(25, 24, 24);
+      color: whitesmoke;
+      }
+    .gallery{
+     display: grid;
+    grid-template-columns: repeat(2,250px);
+    gap: 20px;
+    justify-content: center;
+
+    }
+    .gallery img{
+      object-fit: cover;
+      width: 250px;
+      height: 250px;
+    }
+   
+
+  </style>
+
+</head>
+<body>
+    <div class="gallery">
+      <h2>Image Gallery</h2> <br>
+
+      <img src="/Assets/picture/eminem1.jpg" alt="Eminem" width="250" height="300px"> Eminem <br>
+      <img id="D12" src="/Assets/picture/D12.jpg" alt="D12" width="500" height="300"> D12 <br>
+      <img src="/Assets/picture/50_Cent.png" alt="50 Cent" width="300" height="400"> 50 Cent <br>
+      <img src="/Assets/picture/yelawolf.jpg" alt="Yelawolf" width="400" height="400"> Yelawolf <br>
+      <img src="/Assets/picture/obie.jpg" alt="Obie trice" width="300" height="500"> Obie trice <br>
+      <img src="/Assets/picture/boogie.jpeg" alt="Boogie"> Booie
+    </div>
+</body>
+</html>

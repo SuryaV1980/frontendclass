@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics Shop Inventory </title>
+</head>
+<body>
+  <main>
+    <h1>Product Registration & Inventory Report</h1>
+    <div>
+      <form>
+        <label for="Productid">Product ID: </label><br>
+        <input type="tel" id="Username" required><br><br>
+
+        <label for="Productname" >Product Name</label><br>
+        <input type="text" id="Productname" required><br><br>
+
+        <label for="Productbrand">Brand:</label><br>
+        <input type="text" id="Productbrand" required><br><br>
+
+        <label for="productcategory">category</label><br>
+        <select id="productcategory">
+          <option value="">---Select One---</option>
+          <option value="1">Laptop</option>
+          <option value="2">Mobile</option>
+          <option value="3">Tablet</option>
+          <option value="4">Accessories</option> 
+        </select><br><br>
+
+        <label for="productprice">Price: </label><br>
+        <input type="tel" id="Usernumber" required><br><br>
+
+        <label for="Productquantity">Quantity:</label><br>
+        <input type="number" name="quantity" id="Productquantity"><br><br>
+
+        <label for="Productsupplier">Supplier: </label><br>
+        <input type="text" id="Productsupplier" placeholder="Supplier Name" required><br><br>
+
+        <label for="Register">Product Image</label><br>
+        <input type="file" value="Register"><br><br>
+
+        <input type="submit" value="Apply">
+        <input type="reset" value="Reset">
+      </form>
+    </div>
+  </main>
+  <br><br>
+  <hr>
+  <h2>Product Inventory Report</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Stock Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>P101</td>
+        <td>Laptop</td>
+        <td>HP</td>
+        <td>₹55,000</td>
+        <td>15</td>
+        <td>In Stock</td>
+    </tr>
+
+    <tr>
+        <td>P102</td>
+        <td>Smartphone</td>
+        <td>Samsung</td>
+        <td>₹28,000</td>
+        <td>8</td>
+        <td>Low Stock</td>
+    </tr>
+
+    <tr>
+        <td>P103</td>
+        <td>Headphones</td>
+        <td>Sony</td>
+        <td>₹3,500</td>
+        <td>0</td>
+        <td>Out of Stock</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

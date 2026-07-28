@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   text-align: center;
+   font-size: large;
+   
+}
+
+h3, p{
+  background-color:crimson;
+
+}
+
+.doctor{
+  color: aqua;
+}
+
+h2{
+  background-color: aquamarine;
+}
+
+#emergency {
+  color:darkblue;
+}

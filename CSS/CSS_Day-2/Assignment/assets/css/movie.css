@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-left: 30px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   text-align: center;
+   
+}
+
+div{
+  background-color: rgb(131, 111, 85);
+  color: brown;
+  height: 50px;
+  width: 600px;
+}
+.title, .hero{
+  background-color: aqua;
+  
+}
+.release_year{
+  background-color: black;
+  color: wheat;
+}

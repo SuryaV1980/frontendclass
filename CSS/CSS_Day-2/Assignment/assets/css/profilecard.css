@@ -1,0 +1,26 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+div{
+  background-color:blueviolet;
+  color: blue;
+  width: 600px;
+  height: 200px;
+  text-align: center;
+}
+
+.username{
+  color: aqua;
+}

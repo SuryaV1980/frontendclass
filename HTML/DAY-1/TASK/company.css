@@ -1,0 +1,33 @@
+body{
+   background-color: rgb(17, 17, 17);
+  color: white;
+  align-items: center;
+  font-family: segoe UI;
+  font-size: 19px;
+  
+}
+.logo{
+  width:100px;
+}
+.header{
+  background-color:  rgb(238, 28, 36);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.eminem-artist, .fiftycent-artist, .yelawolf-artist, .obie-artist, .boogie-artist, .conway-artist, .grip-artist{
+  width: 200px;
+  
+}
+.D12-artist{
+  width: 300px;
+}
+.artist-container{
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-rows: 300px 300px  ;
+  gap: 5em;
+  justify-items: center;
+  align-items: center;
+}

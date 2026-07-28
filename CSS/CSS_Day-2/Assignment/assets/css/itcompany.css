@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   text-align: center;
+}
+
+div{
+  background-color: bisque;
+  color: blueviolet;
+  width: 600px;
+  height: 200px;
+ 
+}
+.TCS{
+  background-color: blue;
+  color: black;
+}
+
+#infosys{
+  background-color: cadetblue;
+  color: chartreuse;
+}

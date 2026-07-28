@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Apple_air{
+  width:150px;
+  height: 200px;
+
+}
+.product_image{
+  padding:30px;
+  background-color:rgb(247, 247, 247) ;
+}
+.product_container{
+  display: flex;
+  align-items: center;
+  width: 800px;
+  
+}
+.cartbutton{
+  background-color:rgb(255, 216, 20);
+  width: 350px;
+  height: 30px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 5px;
+}
+
+.product_detail{
+  width: auto;
+}
+.amount{
+  font-size: small;
+}
+.offer{
+  font-size: 14px;
+}
+.para{
+  margin-bottom:10px;
+}

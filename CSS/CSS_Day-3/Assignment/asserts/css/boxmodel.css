@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Box-1{
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}
+
+.Box-2{
+  width: 150px;
+  height: 100px;
+  background-color: blue;
+  padding: 5px;
+}
+
+.Box-3{
+  width:100px;
+  height:100px;
+  padding:10px;
+  border:solid 2px black;
+  background-color:brown;
+}
+.Box-4{
+  width:100px;
+  height:100px;
+  padding:5px;
+  border:solid 2px black;
+  margin:10px;
+  background-color:chocolate;
+}

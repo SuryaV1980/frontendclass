@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Manrope:wght@200..800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+ font-family: manrope;
+ background-color: blueviolet;
+}
+
+.Area1{
+  background-color: black;
+  color: aquamarine;
+  padding:20px;
+}
+
+.houseA{
+  background-color:chocolate;
+  width: 100px;
+  height: 25px;
+  padding-left: 20px;
+  display: none;
+}
+
+.Area2{
+  background-color: rgb(83, 38, 38);
+  color: aquamarine;
+  padding:20px;
+}
+
+.houseB{
+  background-color:chocolate;
+  width: 100px;
+  height: 25px;
+  padding-left: 20px;
+  visibility: hidden;
+}

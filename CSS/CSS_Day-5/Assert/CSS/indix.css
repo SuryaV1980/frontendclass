@@ -1,0 +1,91 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  
+}
+
+html{
+  scroll-behavior:smooth
+}
+body{
+  background:#000;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  text-decoration: none;
+}
+
+header{
+  position:sticky;
+  top:0;
+  background:#111;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #333;
+  z-index:10
+}
+.logo{
+  font-size:28px;
+  font-weight:bold
+}
+nav a{
+  color:#fff;
+  margin-left:20px
+}
+.hero{
+  height:100vh;
+  background:url('images/eminem-banner.jpg') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center
+}
+.hero h1{
+  font-size:64px;text-shadow:2px 2px 8px #000}
+.hero p{
+  font-size:20px;margin:20px 0}
+.btn{
+  display:inline-block;
+  padding:12px 28px;
+  background:#c00;
+  color:#fff;
+  border-radius:5px
+}
+.artist{
+  display:flex;
+  gap:50px;
+  align-items:center;
+  padding:80px 10%;
+  border-bottom:1px solid #222
+}
+
+.artist img{
+  width:420px;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px
+}
+.artist h2{
+  font-size:48px;
+  margin-bottom:15px
+}
+.artist p{
+  line-height:1.8;
+  color:#ccc;
+  margin-bottom:20px
+}
+.albums{
+  display:flex;
+  gap:15px;
+  margin-top:20px;
+  flex-wrap:wrap
+}
+.album{
+  background:#111;
+  padding:18px;
+  border:1px solid #333;
+  border-radius:8px;
+  transition:.3s
+}

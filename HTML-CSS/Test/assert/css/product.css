@@ -1,0 +1,159 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+.container{
+  display: inline-block;
+  align-items: center;
+}
+.container1{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 25px;
+  
+}
+.oneplus{
+  width: 250px;
+  padding: 15px;
+}
+
+.mobile1{
+  background-color: rgb(247, 247, 247);
+  width: 800px;
+  height: 350px;
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product1 > p{
+  font-size: 21px;
+}
+.customer_reviews{
+  color: rgb(77, 74, 74);
+}
+
+.mrp{
+  font-size:15px;
+}
+
+.off{
+  font-size: medium;
+  font-weight: 500;
+}
+
+.save{
+  font-size: 15px;
+  color: rgb(77, 74, 74);
+}
+
+.dollar{
+  font-size: xx-large;
+}
+
+button{
+background-color:rgb(255, 216, 20);
+border: none;
+width: 300px;
+height: 30px;
+border-radius: 20px;
+cursor: pointer;
+}
+button:hover{
+  background-color: rgb(233, 194, 0);
+  opacity: 0.8;
+}
+
+.container2{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 25px;
+  
+}
+.google10{
+  width: 250px;
+  padding: 15px;
+}
+
+.mobile2{
+  background-color: rgb(247, 247, 247);
+  width: 800px;
+  height: 350px;
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product2 > p{
+  font-size: 21px;
+}
+
+.container3{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 25px;
+  
+}
+.googlepixel{
+  width: 250px;
+  padding: 15px;
+}
+
+.mobile3{
+  background-color: rgb(247, 247, 247);
+  width: 800px;
+  height: 350px;
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product3 > p{
+  font-size: 21px;
+}
+
+
+.container4{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 25px;
+  
+}
+.redmi{
+  width: 250px;
+  padding: 15px;
+}
+
+.mobile4{
+  background-color: rgb(247, 247, 247);
+  width: 800px;
+  height: 350px;
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product4 > p{
+  font-size: 21px;
+}

@@ -1,0 +1,173 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background-color: black;
+  color: white;
+}
+ 
+a{
+    text-decoration: none;
+    color: wheat;
+    background-color: rgb(63, 116, 98);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+a:hover{
+ opacity: 0.5;
+}
+
+h1{
+
+    font-size: 60px;
+
+}
+
+h2{
+
+    font-size: 40px;
+
+    color: #1e3a5f;
+
+}
+
+p{
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+}
+.navbar{
+    display:flex;
+    align-items:flex-end;
+    justify-content: space-evenly;  
+    margin: 20px; 
+}
+
+header{
+    background-color: #1e3a5f;
+    padding: 20px 80px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover{
+    color: gold;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+    background: linear-gradient(#1e3a5f,#4d79a5);
+    color: white;
+}
+
+button{
+    background-color: #ff9800;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover{
+    background-color: #e68900;
+}
+
+#about{
+    padding: 70px;
+
+    text-align: center;
+}
+
+.skill-container{
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: black;
+
+}
+
+.skill-card{
+
+    width: 200px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    text-align: center;
+
+
+}
+
+.project-container{
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: black;
+}
+
+.project-card{
+
+    width: 280px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+
+}
+.project-card:hover{
+
+    transform: translateY(-8px);
+    transition: .3s;
+
+}
+
+
+section{
+
+    padding: 80px 60px;
+
+}

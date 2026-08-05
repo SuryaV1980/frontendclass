@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Gellix', 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+.parent > a {
+  color: black;
+}
+
+.badge{
+  position: absolute;
+  background-color: red;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  top:-10px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.parent{
+  position: relative;
+  display: inline-block;
+}
+

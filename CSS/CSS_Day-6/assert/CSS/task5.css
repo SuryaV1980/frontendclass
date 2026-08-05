@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Gellix', 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.box{
+    width:220px;
+    height:80px;
+    background:royalblue;
+    color:white;
+    margin:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:10px;
+}
+
+/* Box 1 */
+.static{
+    position:static;
+}
+
+/* Box 2 */
+.relative{
+    position:relative;
+    left:50px;
+}
+
+/* Parent for absolute box */
+.parent{
+    position:relative;
+    width:500px;
+    height:200px;
+    border:2px solid black;
+    margin:20px;
+}
+
+/* Box 3 */
+.absolute{
+    position:absolute;
+    top:50px;
+    left:100px;
+    background:tomato;
+}
+
+/* Box 4 */
+.fixed{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:green;
+}
+
+/* Box 5 */
+.sticky{
+    position:sticky;
+    top:10px;
+    background:orange;
+}
+
+/* To enable scrolling */
+.content{
+    height:1200px;
+}

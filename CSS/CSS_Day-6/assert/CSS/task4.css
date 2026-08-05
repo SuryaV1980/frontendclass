@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Gellix', 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 40px;
+}
+.box1{
+background-color: red;
+width: 150px;
+height: 150px;
+position: absolute;
+}
+
+.box2{
+background-color: rgb(34, 198, 97);
+width: 150px;
+height: 150px;
+position: relative;
+top:40px;
+left: 60px;
+}
+
+.box3{
+background-color: rgb(145, 125, 125);
+width: 150px;
+height: 150px;
+}

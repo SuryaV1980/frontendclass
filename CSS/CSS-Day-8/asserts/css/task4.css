@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px;
+}
+
+
+h2{
+    color: #333;
+    margin: 15px 0;
+}
+
+/* Add symbol before heading */
+h2::before{
+    content: "★ ";
+    color: gold;
+    font-size: 20px;
+}
+
+/* Add symbol after heading */
+h2::after{
+    content: " ✔";
+    color: green;
+    font-size: 20px;
+}

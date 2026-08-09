@@ -19,14 +19,12 @@ h2{
     margin: 15px 0;
 }
 
-/* Add symbol before heading */
 h2::before{
     content: "★ ";
     color: gold;
     font-size: 20px;
 }
 
-/* Add symbol after heading */
 h2::after{
     content: " ✔";
     color: green;

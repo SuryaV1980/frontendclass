@@ -1,0 +1,99 @@
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      padding: 20px;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+.services-section {
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .services-section h2 {
+      color: #2c3e50;
+      font-size: 2rem;
+      transition: color 0.3s ease;
+    }
+
+    .services-container {
+      display: flex;
+      gap: 20px;
+      /* Desktop: Cards appear in one row */
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+
+    /* ==========================================
+       MEDIA QUERIES FOR RESPONSIVENESS
+       ========================================== */
+
+    /* Tablet Breakpoint (Task 3: 2 cards per row) */
+    @media (max-width: 992px) {
+      .team-card {
+        /* Tablet: 2 cards per row */
+        flex: 0 1 calc(50% - 20px);
+      }
+    }
+
+    /* Mobile Breakpoint (Task 3 & Task 4) */
+    @media (max-width: 768px) {
+      /* Task 3 Mobile Requirements */
+      .team-card {
+        /* Mobile: 1 card per row */
+        flex: 0 1 100%;
+      }
+
+      /* Task 4 Mobile Requirements */
+      .services-section {
+        /* Requirement: Change Background Color */
+        background-color: #2c3e50; 
+      }
+
+      .services-section h2 {
+        /* Requirement: Change Heading Color & Reduce Font Size */
+        color: #ffffff; 
+        font-size: 1.5rem; 
+      }
+
+      .services-container {
+        /* Requirement: Cards should appear one below another */
+        flex-direction: column; 
+      }
+
+      .service-card h3 {
+        /* Requirement: Reduce Font Size */
+        font-size: 0.95rem; 
+      }
+    }

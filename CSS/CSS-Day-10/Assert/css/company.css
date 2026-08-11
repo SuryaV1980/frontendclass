@@ -5,6 +5,10 @@
       font-family: Arial, sans-serif;
     }
 
+    html{
+      scroll-behavior: smooth;
+    }
+
     body {
       padding: 20px;
       background-color: #f4f6f9;
@@ -20,9 +24,7 @@
       text-align: center;
     }
 
-    /* ==========================================
-       TASK 3: Company Team Section
-       ========================================== */
+  
     .team-container {
       display: flex;
       flex-wrap: wrap;
@@ -37,7 +39,6 @@
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      /* Desktop: 3 cards per row (approx 33.33% minus gap) */
       flex: 0 1 calc(33.333% - 20px);
       min-width: 250px;
     }

@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background-color: hsl(0deg 0% 7.06%);
+}
+
+a{
+  text-decoration: none;
+}
+
+.nav-bar{
+  background-color: hsl(0deg 0% 0%);
+}
+
+.navi-logo{
+  width:20%;
+}
+
+.product div img{
+  width: 300px;
+}
+
+ /* Image Hover Effect */
+    .img-hover-container {
+      cursor: pointer;
+    }
+    
+    .img-hover-container .img-hover {
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out;
+    }
+    .img-hover-container:hover .img-hover {
+      opacity: 1;
+    }

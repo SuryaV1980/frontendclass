@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS - Website </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assert/css/website.css">
+</head>
+<body >
+  <header class="nav-bar">
+    <div class=" d-flex justify-content-between align-items-center p-4 navbar-extented shadow-sm">
+        
+        <div class="navi-logo">
+          <img class="w-25" src="assert/picture/images.png" alt="logo">
+        </div>
+      
+        <div>
+          <img class="w-75" src="assert/picture/logo1.avif" alt="logo">
+        </div>
+        
+        <div class="d-flex g-5 mx-4 fw-bold">
+          <a class="nav-link text-danger" href="#News">News</a>
+          <a class="nav-link text-danger" href="#Music">Music</a>
+          <a class="nav-link text-danger" href="#Video">Video</a>
+          <a class="nav-link text-danger me-4" href="#Shop">Shop</a>
+          <button class="btn btn-danger">Login</button>
+        </div>
+
+    </div>
+  </header>
+
+  <section>
+    <div>
+      <div id="carouselExample" class="carousel slide w-100 mt-4">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assert/picture/EM-00032_MDGCVinyl_Banners__Homepage_Desktop_Ver2__r1.webp" class="d-block w-100" alt="1">
+          </div>
+
+          <div class="carousel-item">
+            <img src="assert/picture/EM-00020---BFCM-Promo2600-x-723-Back-In-Stock-Homepage_4.webp" class="d-block w-100" alt="2">
+          </div>
+
+          <div class="carousel-item">
+            <img src="assert/picture/EM-00017-SSLP_TDOSS-Vinyl-Staticx_r1Home-Desktop_2.webp" class="d-block w-100" alt="3">
+          </div>
+        </div>
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============================================== -->
+  <!-- NEW MULTI-PRODUCT CAROUSEL (3 Items Per Slide) -->
+  <!-- ============================================== -->
+  <section class="product-slider-section py-5" id="Shop">
+    <div class="container">
+      <div class="text-center text-light mb-4">
+        <span class="badge bg-danger px-3 py-2 text-uppercase mb-2">Featured Showcase</span>
+        <h2 class="fw-bold">Trending Merch Slider</h2>
+        <p class="text-secondary">Browse our exclusive collections &amp; merch directly in the slider</p>
+      </div>
+
+      <div id="productMultiCarousel" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-interval="5000">
+        
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators" style="bottom: -40px;">
+          <button type="button" data-bs-target="#productMultiCarousel" data-bs-slide-to="0" class="active bg-danger" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#productMultiCarousel" data-bs-slide-to="1" class="bg-danger" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#productMultiCarousel" data-bs-slide-to="2" class="bg-danger" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner pb-4">
+
+          <!-- SLIDE 1 (3 Products) -->
+          <div class="carousel-item active">
+            <div class="row g-4 justify-content-center">
+              
+              <!-- Product 1 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/1.jpg" alt="TDOSS Hoodie Front" class="img-fluid">
+                    <img src="assert/picture/1-1.jpg" alt="TDOSS Hoodie Back" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-danger">Best Seller</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 4.9</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">TDOSS Collector Hoodie</h5>
+                  <p class="text-secondary small flex-grow-1">Official heavyweight cotton pullover with back graphic print.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$75.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/2.jpg" alt="Curtain Call Tee Front" class="img-fluid">
+                    <img src="assert/picture/2-2.webp" alt="Curtain Call Tee Back" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-dark border border-danger text-danger">New Drop</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 4.8</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">Curtain Call 2 Vintage Tee</h5>
+                  <p class="text-secondary small flex-grow-1">Premium vintage washed graphic tee with dual-side artwork.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$45.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/3.jpg" alt="Shady Records Pullover Front" class="img-fluid">
+                    <img src="assert/picture/3-3.webp" alt="Shady Records Pullover Back" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-danger">Hot</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 5.0</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">Shady Classic Long Sleeve</h5>
+                  <p class="text-secondary small flex-grow-1">Classic athletic crewneck featuring embroidered iconic emblem.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$65.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- SLIDE 2 (3 Products) -->
+          <div class="carousel-item">
+            <div class="row g-4 justify-content-center">
+              
+              <!-- Product 4 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/4.jpg" alt="MMLP Limited Tee Front" class="img-fluid">
+                    <img src="assert/picture/4-4.jpg" alt="MMLP Limited Tee Back" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-danger">Exclusive</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 4.9</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">Marshall Mathers LP Tee</h5>
+                  <p class="text-secondary small flex-grow-1">Anniversary edition screen-printed heavyweight jersey tee.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$50.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/5.jpg" alt="Kamikaze Windbreaker Front" class="img-fluid">
+                    <img src="assert/picture/5-5.jpg" alt="Kamikaze Windbreaker Back" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-danger">Popular</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 4.7</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">Kamikaze Camo Jacket</h5>
+                  <p class="text-secondary small flex-grow-1">Water-resistant zippered street jacket with custom patches.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$85.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/6.jpg" alt="MTBMB Merch Front" class="img-fluid">
+                    <img src="assert/picture/6-6.webp" alt="MTBMB Merch Back" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-dark border border-danger text-danger">Limited</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 4.8</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">Music To Be Murdered Cap</h5>
+                  <p class="text-secondary small flex-grow-1">Embroidered 6-panel strapback snap cap with custom liner.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$35.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- SLIDE 3 (3 Products) -->
+          <div class="carousel-item">
+            <div class="row g-4 justify-content-center">
+              
+              <!-- Product 7 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/MDGCVinyl_SideA.webp" alt="Vinyl Side A" class="img-fluid">
+                    <img src="assert/picture/MDGCVinyl_SideB.webp" alt="Vinyl Side B" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-danger">Vinyl LP</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 5.0</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">MDGC Deluxe Vinyl LP</h5>
+                  <p class="text-secondary small flex-grow-1">Limited double-sided colored vinyl collector's edition record.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$40.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 8 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/eminem.jpg" alt="Eminem Poster Front" class="img-fluid">
+                    <img src="assert/picture/eminem1.jpg" alt="Eminem Poster Alternate" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-dark border border-danger text-danger">Special</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 4.9</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">Official Tour Artwork Poster</h5>
+                  <p class="text-secondary small flex-grow-1">High-definition archival print on matte finish museum-grade paper.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$30.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 9 -->
+              <div class="col-12 col-md-4">
+                <div class="product-slider-card p-3 h-100 d-flex flex-column text-light">
+                  <div class="product-slider-img-wrap rounded mb-3">
+                    <img src="assert/picture/D12.jpg" alt="D12 Classic Front" class="img-fluid">
+                    <img src="assert/picture/boogie.jpeg" alt="Artist Feature Back" class="img-fluid hover-img">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="badge bg-danger">Classic</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i> 4.8</span>
+                  </div>
+                  <h5 class="fw-bold mb-1">D12 World Commemorative Album</h5>
+                  <p class="text-secondary small flex-grow-1">Remastered edition audio collection with exclusive booklet inside.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top border-secondary">
+                    <span class="fs-5 fw-bold text-light">$25.00</span>
+                    <button class="btn btn-sm btn-outline-danger px-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel Navigation Controls -->
+        <button class="carousel-control-prev carousel-btn-custom shadow" type="button" data-bs-target="#productMultiCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next carousel-btn-custom shadow" type="button" data-bs-target="#productMultiCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- FORM & ADDRESS SECTION -->
+  <!-- ============================================== -->
+  <section class="contact-section py-5 text-light" id="Contact">
+    <div class="container my-3">
+      <div class="text-center mb-5">
+        <span class="badge bg-danger px-3 py-2 text-uppercase mb-2">Get In Touch</span>
+        <h2 class="fw-bold">Contact Us &amp; Store Location</h2>
+        <p class="text-secondary">Have questions regarding orders, merchandise or tour updates? We are here to help.</p>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- CONTACT FORM -->
+        <div class="col-lg-7">
+          <div class="contact-card p-4 p-md-5 h-100 shadow-lg">
+            <h3 class="fw-bold text-light mb-2"><i class="bi bi-chat-dots-fill text-danger me-2"></i>Send Us A Message</h3>
+            <p class="text-secondary mb-4 small">Fill out the form below and our team will get back to you within 24 hours.</p>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for contacting us! We will respond shortly.');">
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label text-light small fw-bold">First Name</label>
+                  <input type="text" class="form-control custom-form-input" id="firstName" placeholder="John" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label text-light small fw-bold">Last Name</label>
+                  <input type="text" class="form-control custom-form-input" id="lastName" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="emailAddr" class="form-label text-light small fw-bold">Email Address</label>
+                  <input type="email" class="form-control custom-form-input" id="emailAddr" placeholder="john.doe@example.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phoneNum" class="form-label text-light small fw-bold">Phone Number</label>
+                  <input type="tel" class="form-control custom-form-input" id="phoneNum" placeholder="+1 (555) 000-0000">
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="subjectSelect" class="form-label text-light small fw-bold">Topic / Subject</label>
+                <select class="form-select custom-form-select" id="subjectSelect" required>
+                  <option value="" selected disabled>Select an inquiry category</option>
+                  <option value="order">Order &amp; Shipping Status</option>
+                  <option value="product">Merchandise &amp; Sizing Query</option>
+                  <option value="tickets">Music / Tour Info</option>
+                  <option value="returns">Returns &amp; Exchanges</option>
+                  <option value="general">General Support</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label for="messageBox" class="form-label text-light small fw-bold">Your Message</label>
+                <textarea class="form-control custom-form-textarea" id="messageBox" rows="4" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="newsletterCheck" checked>
+                <label class="form-check-label text-secondary small" for="newsletterCheck">
+                  Subscribe to receive updates on exclusive vinyl releases and discount codes.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-danger btn-lg w-100 fw-bold shadow-sm">
+                <i class="bi bi-send-fill me-2"></i>Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ADDRESS & STORE INFORMATION -->
+        <div class="col-lg-5">
+          <div class="address-card p-4 p-md-5 h-100 shadow-lg d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="fw-bold text-light mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i>Headquarters &amp; Store</h3>
+              <p class="text-secondary mb-4 small">Visit our flagship location or reach out directly through our contact channels.</p>
+
+              <!-- Address Item 1 -->
+              <div class="d-flex align-items-start mb-4">
+                <div class="contact-icon-box me-3">
+                  <i class="bi bi-geo-alt text-danger fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold text-light mb-1">Physical Address</h6>
+                  <p class="text-secondary mb-0 small">
+                    8 Mile Road &amp; Gratiot Avenue<br>
+                    Detroit, MI 48205, United States
+                  </p>
+                </div>
+              </div>
+
+              <!-- Address Item 2 -->
+              <div class="d-flex align-items-start mb-4">
+                <div class="contact-icon-box me-3">
+                  <i class="bi bi-telephone text-danger fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold text-light mb-1">Phone Numbers</h6>
+                  <p class="text-secondary mb-0 small">
+                    Toll-Free: +1 (800) 742-3973<br>
+                    Direct Support: +1 (313) 555-0199
+                  </p>
+                </div>
+              </div>
+
+              <!-- Address Item 3 -->
+              <div class="d-flex align-items-start mb-4">
+                <div class="contact-icon-box me-3">
+                  <i class="bi bi-envelope text-danger fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold text-light mb-1">Email Inquiries</h6>
+                  <p class="text-secondary mb-0 small">
+                    Support: support@shadyrecords-shop.com<br>
+                    Press &amp; Media: press@shadyrecords.com
+                  </p>
+                </div>
+              </div>
+
+              <!-- Address Item 4 -->
+              <div class="d-flex align-items-start mb-4">
+                <div class="contact-icon-box me-3">
+                  <i class="bi bi-clock text-danger fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold text-light mb-1">Operating Hours</h6>
+                  <p class="text-secondary mb-0 small">
+                    Monday - Friday: 9:00 AM - 8:00 PM EST<br>
+                    Saturday: 10:00 AM - 6:00 PM EST<br>
+                    Sunday: Closed
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location Map Placeholder Card -->
+            <div class="rounded overflow-hidden border border-secondary p-3 mt-3 bg-black text-center">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="small text-light"><i class="bi bi-pin-map-fill text-danger me-1"></i> Detroit Flagship Hub</span>
+                <span class="badge bg-success small"><i class="bi bi-check-circle me-1"></i>Open Today</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- FOOTER SECTION -->
+  <!-- ============================================== -->
+  <footer class="footer-section text-light pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        
+        <!-- Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="mb-3">
+            <img src="assert/picture/images.png" alt="Shady Logo" style="max-height: 45px;" class="img-fluid me-2">
+            <img src="assert/picture/logo1.avif" alt="Logo Title" style="max-height: 40px;" class="img-fluid">
+          </div>
+          <p class="text-secondary small pe-lg-4">
+            Official records, apparel, exclusive vinyls and limited edition merchandise. Delivered directly to fans worldwide.
+          </p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#Facebook" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#Twitter" class="social-icon-btn" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#Instagram" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#YouTube" class="social-icon-btn" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#Spotify" class="social-icon-btn" title="Spotify"><i class="bi bi-spotify"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-6">
+          <h5 class="fw-bold text-light mb-3 border-bottom border-danger pb-2 d-inline-block">Quick Links</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#carouselExample" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Home</a></li>
+            <li class="mb-2"><a href="#News" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>News &amp; Media</a></li>
+            <li class="mb-2"><a href="#Music" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Discography</a></li>
+            <li class="mb-2"><a href="#Video" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Music Videos</a></li>
+            <li class="mb-2"><a href="#Shop" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Merch Shop</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div class="col-lg-3 col-6">
+          <h5 class="fw-bold text-light mb-3 border-bottom border-danger pb-2 d-inline-block">Customer Care</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#Contact" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Contact Support</a></li>
+            <li class="mb-2"><a href="#Tracking" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Order Tracking</a></li>
+            <li class="mb-2"><a href="#Shipping" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Shipping &amp; Delivery</a></li>
+            <li class="mb-2"><a href="#Returns" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Returns &amp; Refunds</a></li>
+            <li class="mb-2"><a href="#SizeGuide" class="footer-link"><i class="bi bi-chevron-right text-danger me-1"></i>Apparel Size Guide</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="fw-bold text-light mb-3 border-bottom border-danger pb-2 d-inline-block">VIP Newsletter</h5>
+          <p class="text-secondary small mb-3">
+            Subscribe for early access to limited vinyl pressings and exclusive tour merch.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control custom-form-input" placeholder="Your email..." required>
+              <button class="btn btn-danger" type="submit"><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </form>
+          <span class="text-secondary small" style="font-size: 0.75rem;"><i class="bi bi-shield-check text-success me-1"></i> We respect your privacy. No spam.</span>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Terms -->
+      <hr class="border-secondary my-4">
+      <div class="row align-items-center small text-secondary">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          &copy; 2026 Shady Records / BS Website. All Rights Reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#Privacy" class="text-secondary text-decoration-none me-3 hover-text-danger">Privacy Policy</a>
+          <a href="#Terms" class="text-secondary text-decoration-none me-3">Terms of Service</a>
+          <a href="#Cookies" class="text-secondary text-decoration-none">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+   <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

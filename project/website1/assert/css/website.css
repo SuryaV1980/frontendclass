@@ -1,0 +1,207 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background-color: hsl(0deg 0% 7.06%);
+}
+
+a{
+  text-decoration: none;
+}
+
+.nav-bar{
+  background-color: hsl(0deg 0% 0%);
+}
+
+.navi-logo{
+  width:20%;
+}
+
+.product div img{
+  width: 300px;
+}
+
+  /* Image Hover Effect */
+    .img-hover-container {
+      cursor: pointer;
+    }
+    
+    .img-hover-container .img-hover {
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out;
+    }
+    .img-hover-container:hover .img-hover {
+      opacity: 1;
+    }
+
+/* Multi-Product Carousel Styling */
+.product-slider-section {
+  background: linear-gradient(180deg, hsl(0deg 0% 7.06%) 0%, hsl(0, 0%, 4%) 100%);
+}
+
+.product-slider-card {
+  background-color: hsl(0, 0%, 11%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.product-slider-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 53, 69, 0.5);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+.product-slider-img-wrap {
+  position: relative;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 15%);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-slider-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-slider-img-wrap .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.product-slider-card:hover .hover-img {
+  opacity: 1;
+}
+
+/* Custom Product Carousel Controls */
+.carousel-btn-custom {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(220, 53, 69, 0.85);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  transition: all 0.25s ease;
+}
+
+.carousel-btn-custom:hover {
+  background-color: #dc3545;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev.carousel-btn-custom {
+  left: -20px;
+}
+
+.carousel-control-next.carousel-btn-custom {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .carousel-control-prev.carousel-btn-custom {
+    left: 5px;
+  }
+  .carousel-control-next.carousel-btn-custom {
+    right: 5px;
+  }
+}
+
+/* Form and Address Section Styling */
+.contact-section {
+  background-color: hsl(0, 0%, 8%);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-card, .address-card {
+  background-color: hsl(0, 0%, 11%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.custom-form-input, .custom-form-select, .custom-form-textarea {
+  background-color: hsl(0, 0%, 15%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.custom-form-input:focus, .custom-form-select:focus, .custom-form-textarea:focus {
+  background-color: hsl(0, 0%, 17%) !important;
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.custom-form-input::placeholder, .custom-form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.contact-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Footer Styling */
+.footer-section {
+  background-color: hsl(0, 0%, 3%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #dc3545;
+  padding-left: 4px;
+}
+
+.social-icon-btn {
+  width: 40px;
+  height: 40px;
+  background-color: hsl(0, 0%, 12%);
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  background-color: #dc3545;
+  color: #fff;
+  transform: translateY(-3px);
+} 

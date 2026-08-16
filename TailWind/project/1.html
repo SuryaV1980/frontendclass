@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silicon with a Brain: The Rise of Neuromorphic Computing</title>
+  <meta name="description" content="Explore how neuromorphic computing and spiking neural networks ditch the Von Neumann bottleneck to process and learn like biological neurons on minimal power.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans for body/UI & Space Grotesk for technical headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Minimal Custom Base Styles */
+    :root {
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    body {
+      font-family: var(--font-body);
+      background-color: #FAFAFA;
+      color: #18181B;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display {
+      font-family: var(--font-display);
+    }
+    .font-mono-code {
+      font-family: var(--font-mono);
+    }
+    /* Subtle dot grid for subtle technical backdrop */
+    .bg-tech-dots {
+      background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900 selection:bg-red-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-red-600 z-50 transition-all duration-150 ease-out" style="width: 0%;"></div>
+
+  <!-- ========================================== -->
+  <!-- 01. NAVIGATION BAR (Header)               -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <span class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white font-display font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          N
+        </span>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-zinc-900 tracking-tight text-lg leading-tight group-hover:text-red-600 transition-colors">
+            NEURO<span class="text-red-600">/</span>SILICON
+          </span>
+          <span class="text-[10px] tracking-widest uppercase font-mono-code text-zinc-400 font-semibold">
+            Tech Journal
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
+        <a href="#bottleneck" class="hover:text-red-600 transition-colors">The Bottleneck</a>
+        <a href="#pillars" class="hover:text-red-600 transition-colors">Core Pillars</a>
+        <a href="#comparison" class="hover:text-red-600 transition-colors">Specs Matrix</a>
+        <a href="#applications" class="hover:text-red-600 transition-colors">Applications</a>
+        <a href="#chips" class="hover:text-red-600 transition-colors">Industry Chips</a>
+      </nav>
+
+      <!-- Action CTA Buttons -->
+      <div class="flex items-center gap-3">
+        <button onclick="copyArticleLink()" id="share-btn" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-700 hover:text-red-600 px-3.5 py-2 rounded-full border border-zinc-200 hover:border-red-200 hover:bg-red-50/50 transition-all cursor-pointer">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+          </svg>
+          <span>Share</span>
+        </button>
+        
+        <a href="#subscribe" class="inline-flex items-center justify-center text-xs font-bold uppercase tracking-wider bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-red-600/20 active:scale-95">
+          Subscribe Free
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 02. HERO SECTION                           -->
+  <!-- ========================================== -->
+  <main class="flex-grow">
+    <article>
+      <!-- Hero Top Banner -->
+      <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 bg-white border-b border-zinc-200 overflow-hidden bg-tech-dots">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <!-- Category Pill & Read Meta -->
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono-code font-bold uppercase tracking-wider bg-red-50 text-red-600 border border-red-200">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span>
+              Deep Dive • Architecture
+            </span>
+            <span class="text-xs text-zinc-400 font-medium font-mono-code">•</span>
+            <span class="text-xs text-zinc-500 font-medium font-mono-code">6 MIN READ</span>
+            <span class="text-xs text-zinc-400 font-medium font-mono-code">•</span>
+            <span class="text-xs text-zinc-500 font-medium font-mono-code">HARDWARE REVOLUTION</span>
+          </div>
+
+          <!-- Main Heading (H1) -->
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-900 tracking-tight leading-[1.15] mb-6">
+            Silicon with a Brain: <br class="hidden sm:inline" />
+            <span class="text-red-600 underline decoration-red-200 underline-offset-8">The Rise of Neuromorphic Computing</span>
+          </h1>
+
+          <!-- Catchy Subtitle -->
+          <p class="text-xl sm:text-2xl text-zinc-700 font-medium leading-relaxed mb-8">
+            How computer chips are ditching traditional architecture to think, process, and learn just like biological neurons.
+          </p>
+
+          <!-- Hero Hook Card -->
+          <div class="p-6 sm:p-8 rounded-2xl bg-zinc-50 border-l-4 border-red-600 border-y border-r border-zinc-200 shadow-sm relative">
+            <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+              <div class="space-y-3 max-w-2xl">
+                <div class="text-xs font-mono-code uppercase font-bold tracking-widest text-red-600">
+                  The Biological Paradox
+                </div>
+                <p class="text-base sm:text-lg text-zinc-700 leading-relaxed">
+                  Traditional computers are fast at crunching numbers, but they waste massive amounts of power moving data back and forth. The human brain, on the other hand, runs complex sensory tasks, vision, and movement using only around <span class="font-bold text-zinc-900 bg-red-100/70 px-1.5 py-0.5 rounded text-red-700">~20 Watts</span> of power. Neuromorphic chips bring this biological blueprint directly into silicon.
+                </p>
+              </div>
+
+              <!-- Visual Stat Gauge -->
+              <div class="w-full md:w-auto flex md:flex-col items-center justify-between gap-4 p-4 rounded-xl bg-white border border-zinc-200 text-center shrink-0">
+                <div>
+                  <div class="font-display text-3xl font-extrabold text-red-600 tracking-tight">20 W</div>
+                  <div class="text-[11px] font-mono-code uppercase text-zinc-500 font-semibold">Human Brain</div>
+                </div>
+                <div class="h-6 w-px md:h-px md:w-full bg-zinc-200"></div>
+                <div>
+                  <div class="font-display text-2xl font-bold text-zinc-400 line-through tracking-tight">300+ W</div>
+                  <div class="text-[11px] font-mono-code uppercase text-zinc-400 font-semibold">Standard GPU</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Author & Publication Date Bar -->
+          <div class="mt-8 pt-6 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-500">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-zinc-900 text-white font-bold flex items-center justify-center text-xs">
+                AI
+              </div>
+              <div>
+                <p class="font-semibold text-zinc-900">Silicon & Neural Systems Editorial</p>
+                <p class="text-zinc-500">Published in Frontier Computing Series</p>
+              </div>
+            </div>
+            <div class="font-mono-code">
+              Updated: August 2026
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ======================================================= -->
+      <!-- 03. THE CORE PROBLEM: THE "VON NEUMANN BOTTLENECK"       -->
+      <!-- ======================================================= -->
+      <section id="bottleneck" class="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-12 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 text-xs font-mono-code font-bold uppercase tracking-wider text-red-600 mb-2">
+            <span>01</span>
+            <span class="w-8 h-px bg-red-600"></span>
+            <span>Architectural Gridlock</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 tracking-tight">
+            The Core Problem: The <span class="text-red-600">"Von Neumann Bottleneck"</span>
+          </h2>
+          <p class="mt-3 text-lg text-zinc-600 max-w-3xl">
+            For 80 years, computing has been trapped in a design where thinking and remembering happen in completely separate rooms.
+          </p>
+        </div>
+
+        <!-- 2-Column Comparison Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Column 1: Traditional Architecture -->
+          <div class="bg-white rounded-2xl p-7 border border-zinc-200 hover:border-zinc-300 shadow-sm flex flex-col justify-between transition-all group">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-zinc-100 mb-6">
+                <span class="text-xs font-mono-code uppercase font-bold tracking-wider text-zinc-400 bg-zinc-100 px-3 py-1 rounded-full">
+                  Legacy Architecture
+                </span>
+                <span class="text-sm font-semibold text-zinc-500">CPUs / GPUs</span>
+              </div>
+
+              <h3 class="font-display text-2xl font-bold text-zinc-900 mb-4 group-hover:text-zinc-700">
+                How Traditional Computers Work
+              </h3>
+
+              <!-- Diagram Representation -->
+              <div class="my-6 p-4 bg-zinc-50 rounded-xl border border-zinc-200 flex items-center justify-between text-center font-mono-code text-xs">
+                <div class="p-2 bg-white rounded-lg border border-zinc-200 shadow-xs font-bold text-zinc-800">
+                  RAM<br><span class="text-[10px] text-zinc-400 font-normal">Memory</span>
+                </div>
+                <div class="flex-1 px-3 flex flex-col items-center">
+                  <span class="text-[10px] text-red-600 font-bold uppercase tracking-wider mb-1">Physical Bus ⚠️</span>
+                  <div class="w-full h-0.5 bg-red-300 relative flex items-center justify-center">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping absolute"></span>
+                  </div>
+                  <span class="text-[9px] text-zinc-400 mt-1">Latency + Heat Loss</span>
+                </div>
+                <div class="p-2 bg-white rounded-lg border border-zinc-200 shadow-xs font-bold text-zinc-800">
+                  CPU<br><span class="text-[10px] text-zinc-400 font-normal">Processor</span>
+                </div>
+              </div>
+
+              <!-- Feature Bullet Points -->
+              <ul class="space-y-3.5 text-zinc-600 text-sm">
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-zinc-100 text-zinc-600 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">1</span>
+                  <span><strong>Data lives in Memory (RAM):</strong> Kept separated from where logical operations occur.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-zinc-100 text-zinc-600 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">2</span>
+                  <span><strong>Calculations happen in the Processor (CPU):</strong> Waits idle for numbers to arrive from memory.</span>
+                </li>
+                <li class="flex items-start gap-3 text-red-700 bg-red-50/50 p-2.5 rounded-lg border border-red-100">
+                  <span class="w-5 h-5 rounded-full bg-red-200 text-red-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">!</span>
+                  <span><strong>The Penalty:</strong> Data constantly travels back and forth along a physical bus. This creates severe heat, slows processing down, and drains massive battery power.</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-zinc-100 text-xs font-mono-code text-zinc-400">
+              Pattern: Von Neumann Model (1945)
+            </div>
+          </div>
+
+          <!-- Column 2: Neuromorphic Solution -->
+          <div class="bg-white rounded-2xl p-7 border-2 border-red-600 shadow-md shadow-red-500/5 flex flex-col justify-between relative overflow-hidden transition-all group">
+            
+            <!-- Red Top Accent Strip -->
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-red-600"></div>
+
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-zinc-100 mb-6">
+                <span class="text-xs font-mono-code uppercase font-bold tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-200">
+                  Biological Silicon
+                </span>
+                <span class="text-sm font-semibold text-red-600">Next-Gen Paradigm</span>
+              </div>
+
+              <h3 class="font-display text-2xl font-bold text-zinc-900 mb-4 group-hover:text-red-600 transition-colors">
+                The Neuromorphic Solution
+              </h3>
+
+              <!-- Diagram Representation -->
+              <div class="my-6 p-4 bg-red-50/60 rounded-xl border border-red-200 flex items-center justify-center text-center font-mono-code text-xs">
+                <div class="p-3 bg-white rounded-xl border-2 border-red-500 shadow-xs flex items-center gap-4 text-left">
+                  <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-base shadow-xs">
+                    ⚡
+                  </div>
+                  <div>
+                    <div class="font-bold text-zinc-900 text-sm">Unified Synaptic Core</div>
+                    <div class="text-[11px] text-red-600 font-semibold">Memory & Compute in One Cell</div>
+                    <div class="text-[10px] text-zinc-500">Zero Bus Travel • Zero Heat Waste</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feature Bullet Points -->
+              <ul class="space-y-3.5 text-zinc-600 text-sm">
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                  <span><strong>Zero Distance Processing:</strong> Memory and computation happen in the exact same physical silicon location.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                  <span><strong>Artificial Neurons & Synapses:</strong> Uses neurons (processors) and synapses (memory connectors) to process information locally.</span>
+                </li>
+                <li class="flex items-start gap-3 text-zinc-900 bg-zinc-50 p-2.5 rounded-lg border border-zinc-200">
+                  <span class="w-5 h-5 rounded-full bg-zinc-900 text-white flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">★</span>
+                  <span><strong>The Breakthrough:</strong> Completely eliminates the memory bus bottleneck, enabling near-instantaneous pattern recognition with fractions of a milliwatt.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-zinc-100 text-xs font-mono-code text-red-600 font-semibold">
+              Pattern: Non-Von Neumann Bio-Architecture
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ======================================================= -->
+      <!-- 04. HOW NEUROMORPHIC CHIPS WORK (3 CORE PILLARS)        -->
+      <!-- ======================================================= -->
+      <section id="pillars" class="py-16 md:py-24 bg-white border-y border-zinc-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- Section Header -->
+          <div class="max-w-3xl mb-12">
+            <div class="inline-flex items-center gap-2 text-xs font-mono-code font-bold uppercase tracking-wider text-red-600 mb-2">
+              <span>02</span>
+              <span class="w-8 h-px bg-red-600"></span>
+              <span>The Biological Blueprint</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 tracking-tight">
+              How Neuromorphic Chips Work: <br />
+              <span class="text-red-600">The 3 Core Pillars</span>
+            </h2>
+            <p class="mt-3 text-lg text-zinc-600">
+              Three fundamental engineering breakthroughs allow neuromorphic hardware to mimic the brain's unmatched sensory efficiency.
+            </p>
+          </div>
+
+          <!-- 3-Column Card Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            
+            <!-- Pillar 1 Card -->
+            <div class="bg-zinc-50 hover:bg-white rounded-2xl p-7 border border-zinc-200 hover:border-red-500 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/5 group flex flex-col justify-between">
+              <div>
+                <!-- Top Badge & Number -->
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-white group-hover:bg-red-600 border border-zinc-200 group-hover:border-red-600 flex items-center justify-center text-red-600 group-hover:text-white transition-colors duration-300 shadow-xs">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <span class="font-mono-code text-2xl font-extrabold text-zinc-300 group-hover:text-red-600 transition-colors">
+                    01
+                  </span>
+                </div>
+
+                <h3 class="font-display text-xl font-bold text-zinc-900 mb-3 group-hover:text-red-600 transition-colors">
+                  Spiking Neural Networks (SNNs)
+                </h3>
+
+                <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                  Traditional computers process continuous, power-draining streams of 1s and 0s at a set clock rate.
+                </p>
+                <div class="p-3.5 bg-white group-hover:bg-red-50/50 rounded-xl border border-zinc-200 group-hover:border-red-200 text-xs text-zinc-700 leading-relaxed transition-colors">
+                  <span class="font-bold text-zinc-900 block mb-1">Event-Driven Firing:</span>
+                  Neuromorphic chips only send brief electrical signals (called <strong>spikes</strong>) when an event occurs. If nothing is happening, the artificial neuron stays asleep and uses <strong>zero power</strong>.
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-[11px] font-mono-code text-zinc-500">
+                <span>Power Mode</span>
+                <span class="font-bold text-red-600 uppercase">Event-Triggered</span>
+              </div>
+            </div>
+
+            <!-- Pillar 2 Card -->
+            <div class="bg-zinc-50 hover:bg-white rounded-2xl p-7 border border-zinc-200 hover:border-red-500 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/5 group flex flex-col justify-between">
+              <div>
+                <!-- Top Badge & Number -->
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-white group-hover:bg-red-600 border border-zinc-200 group-hover:border-red-600 flex items-center justify-center text-red-600 group-hover:text-white transition-colors duration-300 shadow-xs">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <span class="font-mono-code text-2xl font-extrabold text-zinc-300 group-hover:text-red-600 transition-colors">
+                    02
+                  </span>
+                </div>
+
+                <h3 class="font-display text-xl font-bold text-zinc-900 mb-3 group-hover:text-red-600 transition-colors">
+                  Co-Located Processing & Memory
+                </h3>
+
+                <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                  Traditional hardware demands distinct motherboards, RAM sockets, and CPU dies with buses bridging them.
+                </p>
+                <div class="p-3.5 bg-white group-hover:bg-red-50/50 rounded-xl border border-zinc-200 group-hover:border-red-200 text-xs text-zinc-700 leading-relaxed transition-colors">
+                  <span class="font-bold text-zinc-900 block mb-1">Synaptic Storage:</span>
+                  Instead of separate RAM sticks, every artificial synapse remembers previous signals while immediately computing incoming ones without moving data across a bus.
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-[11px] font-mono-code text-zinc-500">
+                <span>Data Bus</span>
+                <span class="font-bold text-red-600 uppercase">Eliminated</span>
+              </div>
+            </div>
+
+            <!-- Pillar 3 Card -->
+            <div class="bg-zinc-50 hover:bg-white rounded-2xl p-7 border border-zinc-200 hover:border-red-500 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/5 group flex flex-col justify-between">
+              <div>
+                <!-- Top Badge & Number -->
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-white group-hover:bg-red-600 border border-zinc-200 group-hover:border-red-600 flex items-center justify-center text-red-600 group-hover:text-white transition-colors duration-300 shadow-xs">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                    </svg>
+                  </div>
+                  <span class="font-mono-code text-2xl font-extrabold text-zinc-300 group-hover:text-red-600 transition-colors">
+                    03
+                  </span>
+                </div>
+
+                <h3 class="font-display text-xl font-bold text-zinc-900 mb-3 group-hover:text-red-600 transition-colors">
+                  Massive Parallelism
+                </h3>
+
+                <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                  Traditional CPUs line instructions up in synchronous queues, processing them sequentially.
+                </p>
+                <div class="p-3.5 bg-white group-hover:bg-red-50/50 rounded-xl border border-zinc-200 group-hover:border-red-200 text-xs text-zinc-700 leading-relaxed transition-colors">
+                  <span class="font-bold text-zinc-900 block mb-1">Mesh Connectivity:</span>
+                  Millions of tiny artificial neurons calculate simultaneously across an interconnected mesh network, matching the brain's ability to process sights, sounds, and motion at once.
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-[11px] font-mono-code text-zinc-500">
+                <span>Concurrency</span>
+                <span class="font-bold text-red-600 uppercase">Millions of Cores</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ======================================================= -->
+      <!-- 05. SIDE-BY-SIDE COMPARISON TABLE                       -->
+      <!-- ======================================================= -->
+      <section id="comparison" class="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-10 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 text-xs font-mono-code font-bold uppercase tracking-wider text-red-600 mb-2">
+            <span>03</span>
+            <span class="w-8 h-px bg-red-600"></span>
+            <span>Architectural Breakdown</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 tracking-tight">
+            Side-by-Side Comparison: <br class="hidden sm:inline" />
+            <span class="text-red-600">Traditional vs Neuromorphic</span>
+          </h2>
+          <p class="mt-3 text-lg text-zinc-600">
+            A comprehensive side-by-side technical evaluation across core performance vectors.
+          </p>
+        </div>
+
+        <!-- Responsive Table Container -->
+        <div class="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-zinc-200 bg-zinc-50/80">
+                  <th class="p-4 sm:p-5 text-xs font-mono-code font-bold uppercase tracking-wider text-zinc-500 w-1/4">
+                    Feature Vector
+                  </th>
+                  <th class="p-4 sm:p-5 text-xs font-mono-code font-bold uppercase tracking-wider text-zinc-700 w-3/8">
+                    Standard Processor <span class="text-zinc-400 font-normal">(CPU / GPU)</span>
+                  </th>
+                  <th class="p-4 sm:p-5 text-xs font-mono-code font-bold uppercase tracking-wider text-red-600 bg-red-50/60 border-l border-red-100 w-3/8">
+                    Neuromorphic Chip <span class="text-red-400 font-normal">(e.g., Intel Loihi)</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-200 text-sm">
+                
+                <!-- Row 1: Design Model -->
+                <tr class="hover:bg-zinc-50/50 transition-colors">
+                  <td class="p-4 sm:p-5 font-bold text-zinc-900 font-mono-code text-xs">
+                    Design Model
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-600">
+                    Von Neumann Architecture
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-900 font-semibold bg-red-50/20 border-l border-red-100 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-red-600"></span>
+                    Biological Brain Architecture
+                  </td>
+                </tr>
+
+                <!-- Row 2: Data Processing -->
+                <tr class="hover:bg-zinc-50/50 transition-colors">
+                  <td class="p-4 sm:p-5 font-bold text-zinc-900 font-mono-code text-xs">
+                    Data Processing
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-600">
+                    Clock-driven, continuous instructions
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-900 font-semibold bg-red-50/20 border-l border-red-100">
+                    Event-driven <span class="text-red-600 font-normal">(Spike-based)</span>
+                  </td>
+                </tr>
+
+                <!-- Row 3: Memory & Compute -->
+                <tr class="hover:bg-zinc-50/50 transition-colors">
+                  <td class="p-4 sm:p-5 font-bold text-zinc-900 font-mono-code text-xs">
+                    Memory & Compute
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-600">
+                    Physically separated <span class="text-zinc-400 text-xs block">(Bus travel latency)</span>
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-900 font-semibold bg-red-50/20 border-l border-red-100">
+                    Integrated in the exact same spot
+                  </td>
+                </tr>
+
+                <!-- Row 4: Energy Consumption -->
+                <tr class="hover:bg-zinc-50/50 transition-colors">
+                  <td class="p-4 sm:p-5 font-bold text-zinc-900 font-mono-code text-xs">
+                    Energy Consumption
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-600">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono-code bg-zinc-100 text-zinc-700">
+                      High power (100s of Watts)
+                    </span>
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-900 font-semibold bg-red-50/20 border-l border-red-100">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-mono-code font-bold bg-red-100 text-red-700 border border-red-200">
+                      Ultra-low power (Milliwatts to Watts)
+                    </span>
+                  </td>
+                </tr>
+
+                <!-- Row 5: Best Used For -->
+                <tr class="hover:bg-zinc-50/50 transition-colors">
+                  <td class="p-4 sm:p-5 font-bold text-zinc-900 font-mono-code text-xs">
+                    Best Used For
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-600">
+                    General logic, 3D graphics rendering, spreadsheets, sequential tasks
+                  </td>
+                  <td class="p-4 sm:p-5 text-zinc-900 font-semibold bg-red-50/20 border-l border-red-100">
+                    Real-time sensor processing, edge AI, pattern & audio recognition
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Table Footer Note -->
+          <div class="p-4 bg-zinc-50 border-t border-zinc-200 flex items-center justify-between text-xs text-zinc-500 font-mono-code">
+            <span>Data Matrix: Hardware Benchmark Specs</span>
+            <span class="text-red-600 font-semibold">1,000x Efficiency Target</span>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ======================================================= -->
+      <!-- 06. REAL-WORLD APPLICATIONS GRID                         -->
+      <!-- ======================================================= -->
+      <section id="applications" class="py-16 md:py-24 bg-white border-y border-zinc-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- Section Header -->
+          <div class="max-w-3xl mb-12">
+            <div class="inline-flex items-center gap-2 text-xs font-mono-code font-bold uppercase tracking-wider text-red-600 mb-2">
+              <span>04</span>
+              <span class="w-8 h-px bg-red-600"></span>
+              <span>Practical Deployments</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 tracking-tight">
+              Real-World Applications: <br />
+              <span class="text-red-600">Where Neuromorphic Tech Dominates</span>
+            </h2>
+            <p class="mt-3 text-lg text-zinc-600">
+              When split-second sensory reaction and zero battery consumption are non-negotiable.
+            </p>
+          </div>
+
+          <!-- 4-Card Grid (2x2 on tablet/desktop) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            
+            <!-- App 1: Robotics & Prosthetics -->
+            <div class="p-7 rounded-2xl bg-zinc-50 hover:bg-white border border-zinc-200 hover:border-red-500 transition-all duration-300 group shadow-xs hover:shadow-md flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-white border border-zinc-200 text-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-red-300 transition-all shadow-xs">
+                  🦾
+                </div>
+                <div class="text-xs font-mono-code uppercase font-bold text-red-600 tracking-wider mb-1">
+                  Bio-Mechanical Sync
+                </div>
+                <h3 class="font-display text-2xl font-bold text-zinc-900 mb-3 group-hover:text-red-600 transition-colors">
+                  Robotics & Prosthetics
+                </h3>
+                <p class="text-zinc-600 text-sm leading-relaxed">
+                  Robotic limbs that adjust grip tension and respond to human nerve impulses in real time without lag, providing intuitive biological tactile feedback on low battery.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs font-mono-code text-zinc-500">
+                <span>Latency</span>
+                <span class="font-bold text-zinc-900">&lt; 1 Millisecond</span>
+              </div>
+            </div>
+
+            <!-- App 2: Autonomous Drones -->
+            <div class="p-7 rounded-2xl bg-zinc-50 hover:bg-white border border-zinc-200 hover:border-red-500 transition-all duration-300 group shadow-xs hover:shadow-md flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-white border border-zinc-200 text-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-red-300 transition-all shadow-xs">
+                  🚁
+                </div>
+                <div class="text-xs font-mono-code uppercase font-bold text-red-600 tracking-wider mb-1">
+                  Zero-Cloud Autonomy
+                </div>
+                <h3 class="font-display text-2xl font-bold text-zinc-900 mb-3 group-hover:text-red-600 transition-colors">
+                  Autonomous Drones
+                </h3>
+                <p class="text-zinc-600 text-sm leading-relaxed">
+                  Small search-and-rescue drones that navigate dense, chaotic forests or collapsed buildings locally without needing satellite GPS or high-power cloud connections.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs font-mono-code text-zinc-500">
+                <span>Connectivity</span>
+                <span class="font-bold text-zinc-900">100% Offline Edge AI</span>
+              </div>
+            </div>
+
+            <!-- App 3: Event-Based Vision (Smart Cameras) -->
+            <div class="p-7 rounded-2xl bg-zinc-50 hover:bg-white border border-zinc-200 hover:border-red-500 transition-all duration-300 group shadow-xs hover:shadow-md flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-white border border-zinc-200 text-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-red-300 transition-all shadow-xs">
+                  👁️
+                </div>
+                <div class="text-xs font-mono-code uppercase font-bold text-red-600 tracking-wider mb-1">
+                  Spike Sensing
+                </div>
+                <h3 class="font-display text-2xl font-bold text-zinc-900 mb-3 group-hover:text-red-600 transition-colors">
+                  Event-Based Vision (Smart Cameras)
+                </h3>
+                <p class="text-zinc-600 text-sm leading-relaxed">
+                  Security and vehicle cameras that only record pixels when motion or light intensity changes occur, saving terabytes of useless blank video storage and wattage.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs font-mono-code text-zinc-500">
+                <span>Storage Saved</span>
+                <span class="font-bold text-zinc-900">&gt; 90% Reduction</span>
+              </div>
+            </div>
+
+            <!-- App 4: Medical Wearables -->
+            <div class="p-7 rounded-2xl bg-zinc-50 hover:bg-white border border-zinc-200 hover:border-red-500 transition-all duration-300 group shadow-xs hover:shadow-md flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-white border border-zinc-200 text-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-red-300 transition-all shadow-xs">
+                  🏥
+                </div>
+                <div class="text-xs font-mono-code uppercase font-bold text-red-600 tracking-wider mb-1">
+                  Ultra-Low Power Biosensing
+                </div>
+                <h3 class="font-display text-2xl font-bold text-zinc-900 mb-3 group-hover:text-red-600 transition-colors">
+                  Medical Wearables & Implants
+                </h3>
+                <p class="text-zinc-600 text-sm leading-relaxed">
+                  Continuous heart arrhythmia and vital monitoring implants that run for years on a tiny coin battery, alerting doctors immediately when irregular spikes occur.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs font-mono-code text-zinc-500">
+                <span>Lifespan</span>
+                <span class="font-bold text-zinc-900">Multi-Year on Coin Cell</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ======================================================= -->
+      <!-- 07. REAL INDUSTRY CHIPS (STATS & FACTS)                 -->
+      <!-- ======================================================= -->
+      <section id="chips" class="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-12 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 text-xs font-mono-code font-bold uppercase tracking-wider text-red-600 mb-2">
+            <span>05</span>
+            <span class="w-8 h-px bg-red-600"></span>
+            <span>Silicon in the Lab</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 tracking-tight">
+            Real Industry Chips: <span class="text-red-600">Stats & Facts</span>
+          </h2>
+          <p class="mt-3 text-lg text-zinc-600">
+            Pioneering research silicon proving that biological computation is no longer theoretical.
+          </p>
+        </div>
+
+        <!-- Chips Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          
+          <!-- Chip 1: Intel Loihi 2 -->
+          <div class="bg-white rounded-2xl p-7 border border-zinc-200 hover:border-red-400 shadow-sm transition-all">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono-code text-xs font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200">
+                Intel Labs
+              </span>
+              <span class="text-xs font-mono-code text-zinc-400">Flagship Generation</span>
+            </div>
+            
+            <h3 class="font-display text-2xl font-bold text-zinc-900 mb-2">
+              Intel Loihi 2
+            </h3>
+            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+              A state-of-the-art neuromorphic research chip featuring fully programmable neuron models and high-speed asynchronous messaging.
+            </p>
+
+            <!-- Stat Counters -->
+            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-zinc-100">
+              <div class="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80">
+                <div class="font-display text-2xl font-extrabold text-red-600">1,000,000+</div>
+                <div class="text-[11px] font-mono-code text-zinc-500 uppercase font-semibold">Artificial Neurons</div>
+              </div>
+              <div class="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80">
+                <div class="font-display text-2xl font-extrabold text-zinc-900">120,000,000</div>
+                <div class="text-[11px] font-mono-code text-zinc-500 uppercase font-semibold">Synapses</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chip 2: IBM TrueNorth -->
+          <div class="bg-white rounded-2xl p-7 border border-zinc-200 hover:border-red-400 shadow-sm transition-all">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono-code text-xs font-bold text-zinc-700 uppercase tracking-widest bg-zinc-100 px-3 py-1 rounded-full border border-zinc-200">
+                IBM Research
+              </span>
+              <span class="text-xs font-mono-code text-zinc-400">DARPA SyNAPSE</span>
+            </div>
+            
+            <h3 class="font-display text-2xl font-bold text-zinc-900 mb-2">
+              IBM TrueNorth
+            </h3>
+            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+              One of the earliest monolithic neuromorphic processors designed for complex real-time cognitive tasks on power budgets measured in milliwatts.
+            </p>
+
+            <!-- Stat Counters -->
+            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-zinc-100">
+              <div class="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80">
+                <div class="font-display text-2xl font-extrabold text-red-600">4,096</div>
+                <div class="text-[11px] font-mono-code text-zinc-500 uppercase font-semibold">Neurosynaptic Cores</div>
+              </div>
+              <div class="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80">
+                <div class="font-display text-2xl font-extrabold text-zinc-900">70 mW</div>
+                <div class="text-[11px] font-mono-code text-zinc-500 uppercase font-semibold">Operating Power</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Key Stat Callout Banner -->
+        <div class="p-8 rounded-2xl bg-zinc-900 text-white border-2 border-red-600 shadow-lg relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+            <div class="space-y-2 text-center md:text-left">
+              <div class="inline-flex items-center gap-2 text-xs font-mono-code font-bold uppercase tracking-widest text-red-400">
+                ★ Key Empirical Benchmark
+              </div>
+              <h3 class="font-display text-2xl sm:text-3xl font-bold tracking-tight">
+                Up to <span class="text-red-500 underline underline-offset-4 decoration-red-400 font-extrabold">1,000× More Energy-Efficient</span>
+              </h3>
+              <p class="text-zinc-400 text-sm max-w-xl">
+                Demonstrated across continuous sensory streaming, robotic motor control, and sparse pattern recognition workloads compared to conventional x86 and GPU chips.
+              </p>
+            </div>
+
+            <div class="shrink-0 text-center p-4 bg-zinc-800/80 rounded-xl border border-zinc-700 min-w-40">
+              <span class="font-display text-4xl sm:text-5xl font-black text-red-500 tracking-tighter">1,000×</span>
+              <span class="block text-[10px] font-mono-code uppercase tracking-wider text-zinc-400 mt-1">Efficiency Factor</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ======================================================= -->
+      <!-- 08. ARTICLE CONCLUSION / CALLOUT BOX                    -->
+      <!-- ======================================================= -->
+      <section class="py-16 md:py-24 bg-white border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- Main Conclusion Card -->
+          <div class="p-8 sm:p-12 rounded-3xl bg-zinc-50 border border-zinc-200 shadow-sm relative overflow-hidden">
+            
+            <!-- Quotation Mark Decor -->
+            <div class="font-serif text-8xl text-red-200/60 font-black absolute top-2 right-6 select-none pointer-events-none">
+              ”
+            </div>
+
+            <div class="relative z-10 space-y-6">
+              
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code font-bold uppercase tracking-wider bg-red-100 text-red-700 border border-red-200">
+                Article Conclusion & Takeaway
+              </div>
+
+              <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 leading-snug">
+                Sensory Intuition Over Raw Brute Force
+              </h2>
+
+              <blockquote class="text-lg sm:text-xl text-zinc-700 leading-relaxed font-medium italic border-l-4 border-red-600 pl-4">
+                "Neuromorphic chips aren't meant to replace your gaming CPU for running spreadsheets or video games. Instead, they are built to give machines the sensory intuition of living creatures—allowing AI to perceive, hear, and react at the speed of thought on minimal battery power."
+              </blockquote>
+
+              <!-- Action Bar within Callout -->
+              <div class="pt-6 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-2 text-xs font-mono-code text-zinc-500">
+                  <span class="w-2 h-2 rounded-full bg-red-600"></span>
+                  <span>End of Article • Written for Next-Gen Engineers</span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <button onclick="copyQuote()" id="copy-quote-btn" class="inline-flex items-center gap-1.5 text-xs font-mono-code font-bold text-zinc-700 bg-white border border-zinc-300 hover:border-red-500 hover:text-red-600 px-4 py-2 rounded-lg transition-all cursor-pointer shadow-xs">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Copy Key Quote</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Minimal Newsletter Subscription Box -->
+          <div id="subscribe" class="mt-12 p-8 rounded-2xl bg-white border-2 border-dashed border-red-200 text-center max-w-2xl mx-auto">
+            <h3 class="font-display text-2xl font-bold text-zinc-900 mb-2">
+              Stay at the Frontier of Silicon Design
+            </h3>
+            <p class="text-sm text-zinc-600 mb-6">
+              Join 12,000+ hardware architects and software engineers receiving our bi-weekly breakdown on neural semiconductors.
+            </p>
+            <form onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input type="email" required placeholder="Enter your work email..." class="flex-grow px-4 py-3 rounded-full text-sm bg-zinc-50 border border-zinc-300 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/20 text-zinc-900">
+              <button type="submit" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all shrink-0 cursor-pointer shadow-sm hover:shadow-md">
+                Subscribe
+              </button>
+            </form>
+            <p id="sub-feedback" class="text-xs font-mono-code text-red-600 mt-3 hidden font-semibold">
+              ✓ Thank you for subscribing! Check your inbox for the silicon whitepaper.
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </article>
+  </main>
+
+
+  <!-- ========================================== -->
+  <!-- 09. MINIMAL FOOTER                         -->
+  <!-- ========================================== -->
+  <footer class="bg-zinc-900 text-zinc-400 py-12 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-800">
+        
+        <div class="flex items-center gap-3">
+          <span class="w-7 h-7 rounded-md bg-red-600 flex items-center justify-center text-white font-display font-bold text-sm">
+            N
+          </span>
+          <span class="font-display font-bold text-white tracking-tight">
+            NEURO<span class="text-red-500">/</span>SILICON
+          </span>
+          <span class="text-xs text-zinc-500 font-mono-code">| Architectural Studies</span>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-medium text-zinc-400">
+          <a href="#bottleneck" class="hover:text-red-400 transition-colors">Von Neumann</a>
+          <a href="#pillars" class="hover:text-red-400 transition-colors">3 Pillars</a>
+          <a href="#comparison" class="hover:text-red-400 transition-colors">Specs</a>
+          <a href="#applications" class="hover:text-red-400 transition-colors">Applications</a>
+          <a href="#chips" class="hover:text-red-400 transition-colors">Hardware</a>
+          <a href="#" class="text-red-400 hover:underline">Back to Top ↑</a>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code text-zinc-500">
+        <p>© 2026 Marshall Article • Silicon with a Brain Series. Minimal White & Red Layout.</p>
+        <p>Built with Tailwind CSS & Semantic HTML5</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification (Hidden by default) -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-zinc-900 text-white text-xs font-mono-code px-4 py-3 rounded-xl border border-red-500 shadow-xl opacity-0 translate-y-4 transition-all duration-300 pointer-events-none z-50 flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+    <span id="toast-msg">Copied to clipboard!</span>
+  </div>
+
+  <!-- Minimal Interactive Script -->
+  <script>
+    // 1. Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('reading-progress').style.width = scrolled + '%';
+    });
+
+    // 2. Toast notification helper
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.innerText = message;
+      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // 3. Copy Article Link
+    function copyArticleLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('Article URL copied to clipboard!');
+      }).catch(() => {
+        showToast('Link copied!');
+      });
+    }
+
+    // 4. Copy Key Quote
+    function copyQuote() {
+      const quote = "Neuromorphic chips aren't meant to replace your gaming CPU for running spreadsheets or video games. Instead, they are built to give machines the sensory intuition of living creatures—allowing AI to perceive, hear, and react at the speed of thought on minimal battery power.";
+      navigator.clipboard.writeText(quote).then(() => {
+        showToast('Key quote copied to clipboard!');
+      }).catch(() => {
+        showToast('Quote copied!');
+      });
+    }
+
+    // 5. Subscription Form Handler
+    function handleSubscribe(e) {
+      e.preventDefault();
+      document.getElementById('sub-feedback').classList.remove('hidden');
+      showToast('Subscribed successfully!');
+    }
+  </script>
+</body>
+</html>

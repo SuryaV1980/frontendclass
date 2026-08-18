@@ -1,0 +1,35 @@
+1. What is JavaScript?
+	JavaScript is a lightweight, interpreted, and single-threaded programming language featuring first-class functions. While it is famous as the scripting language for client-side web pages, it is a versatile, multi-paradigm language that also powers complex server-side environments via Node.js.
+
+2. What is Variable?
+	A variable in programming is a named container or storage location in a computer's memory used to hold data that can be accessed, used, or changed during the execution of a program.
+
+3. What is variable declaration?
+	creating the variable name, no value yet (it's undefined until you give it one)
+
+4. What is initialization?
+	the first assignment, done at the same time as declaration
+
+5. What is an assignment operator?
+	putting a value (or a new value) into a variable that already exists — you can do this repeatedly
+
+6. What are var, let and const?
+	var — old (pre-2015) way. Its scope is the whole function it's in, ignoring blocks like if or for. This causes bugs.
+	let — modern way to declare a variable that can change. It's scoped to the block { } it's declared in, which behaves the way you'd intuitively expect
+	const — same block-scoping as let, but the variable cannot be reassigned after initialization.
+
+7. What is the difference between var, let and const?
+	var is the legacy keyword that attaches to the entire function or global scope, allows you to freely re-declare and reassign it anywhere in that scope, and returns undefined if you access it before its declaration line due to hoisting.
+
+	let is the modern keyword designed for reassignable values, restricting its availability strictly inside the { ... } block where it is written, preventing accidental re-declarations, and throwing a ReferenceError if accessed before initialization.
+
+	const creates a block-scoped, read-only reference that must be initialized immediately with a value upon declaration, cannot be re-declared or reassigned to a new value, and also throws an error if accessed before its declaration line.
+
+8. What is ES6?
+	ES6 (also called ES2015) is a major version update to the JavaScript language spec, released in 2015. JavaScript is standardized under something called ECMAScript (ES) — think of ECMAScript as the rulebook, and JavaScript as the most common implementation of that rulebook. ES6 is the version that introduced let, const, arrow functions, template literals, classes, and more — basically the modern JS syntax you're learning now. Before ES6, JS developers only had var. So when you see "ES6 feature," it means "this wasn't possible in JS before 2015."
+
+9. What is a JavaScript Engine?
+	A JavaScript Engine is the program that actually reads and executes your JS code — it turns the text you write into actions the computer performs. Browsers don't understand JavaScript directly; they need an engine to translate it into machine instructions.
+
+10. What is V8?
+	V8 is the specific engine Google built for Chrome (and it's open source). Its significance: V8 is also what powers Node.js, which is why JavaScript escaped the browser and became usable for writing servers, command-line tools, etc. Different browsers have different engines — Firefox uses SpiderMonkey, Safari uses JavaScriptCore — but V8 is the dominant one because of Chrome's market share and Node's popularity.

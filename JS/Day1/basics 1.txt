@@ -1,0 +1,49 @@
+var userName
+
+var callId
+
+var userNumber
+
+var checkNumber
+
+var checkName
+
+var userId
+
+var firstName
+
+var userAge
+
+var emailAddress
+
+var profileOne
+
+var userEmail
+
+var userPhone
+
+var checkList
+
+var userAddress
+
+var mainFunction
+
+var mainList
+
+var dayTwo
+
+var formCollection
+
+var mainFront
+
+var doWant
+
+var nameTwo
+
+var formId
+
+var enrollmentName
+
+var lastName
+
+var middleName

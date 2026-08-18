@@ -1,0 +1,60 @@
+var userName = "Isha3412"
+var userName1 = "Nithin"
+var userName2 = "Isha Surya@3412"
+var userpass = "Angel@124"
+var userName3 = "AAIsha"
+var employeeName = "MARSHALL MATher"
+var userId = "Malbash@123"
+var userId2 = "Pinkpanther_231"
+var employeeId = "Robert1243"
+var StudentName = "Albert Benjamin"
+var StudentId = "Albert84210"
+var StudentCourse = "Physics"
+var StudentPaper1 = "Java"
+var StudentPaper2 = "SQL"
+var StudentParent = "SASI"
+var ParentId = "Sasi@41273"
+var StoreName = "CAFARITA"
+var StoreManager = "Singh"
+--------------------------------------
+
+let userNumber = 74213
+let EmployeeNumber = 12431
+let EmployeeSalary = 740021
+let EmployeeAge = 12
+let employeeId = 567487
+let StoreNumber = 1243212137
+let userNumber2 = 7871
+let userNumber3 = 47512
+let CollegeId = 712
+let CollegeAge = 107
+let CollegeCourse = 78
+let StudentNumber = 200712
+let StudentNumber2 = 702108
+let HospitalCode = 240002
+let hospitalWard = 7
+let hospitalTotal = 11071
+let hospitalChennai = 371
+let hospitalNewyork = 781
+--------------------------------------
+
+const userOne = true
+const userTwo = false
+const userAge = 17 < 18 // true
+const userAge2 = 17 > 18 // false
+const employeeNumber = false
+const employeeNumber2 = false
+const bankchennai = true
+const bankAccount = false
+const employeeAge = 74 > 18 // true
+const employeeAge3 = 104 > 18 // true
+----------------------------------------
+let SelectedUser = null
+let StudentUser1 = null
+let OfficePerson = null
+------------------------------------------
+let user;
+let result;
+let bike;
+
+output:undefined

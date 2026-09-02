@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <!-- Header Section  -->
+  <header>
+    <div class="flex justify-between p-6 shadow-sm">
+      <div>
+        <img src="assets/picture/logo/pi_napple_school_logo.svg.png" alt="logo" class="w-60">
+      </div>
+      <nav>
+        <div class="flex items-center justify-between gap-15">
+          <a href="#" class="hover:text-[#FEEA63]">Get Certified</a>
+          <a href="#" class="hover:text-[#FEEA63]">Upgrade</a>
+          <a href="#" class="hover:text-[#FEEA63]">Academy</a>
+          <a href="#" class="hover:text-[#FEEA63]">Spaces</a>
+          <a href="#" class="hover:text-[#FEEA63]">Practice</a>
+          <button class="bn-bn bg-[#FEEA63] w-20 h-12 rounded-xl hover:opacity-65 transform transition hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">Sign In</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- banner section -->
+  <section class="bg-[#222431] h-125 mt-10 flex">
+    <div>
+    <p class="text-white pt-50 ml-30 text-5xl">Let's Go Learn</p>
+    <p class="text-white pt-2 ml-30 text-xl">If you don't know anything, dont worry i don't know either</p>
+    <p class="text-[#FEEA63] pt-3 ml-30 text-xl">We learn and grow together</p>
+    </div>
+    <div>
+
+    </div>
+  </section>
+
+
+  <!-- Main topic -->
+  <section class="max-w-7xl mx-auto my-8">
+    <p class="text-3xl font-bold p-9">Logical topics on JavaScript</p>
+
+    <!-- 10 JavaScript Topics Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-9 pb-16">
+      
+      <!-- 1. Factorial -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">1. Factorial</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 01</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let n = 5;
+let factorial = 1;
+
+for (let i = 1; i &lt;= n; i++) {
+    factorial = factorial * i;
+}
+
+console.log(factorial);</code></pre>
+      </div>
+
+      <!-- 2. Sum -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">2. Sum</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 02</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let a = 10;
+let b = 20;
+
+let sum = a + b;
+
+console.log(sum);</code></pre>
+      </div>
+
+      <!-- 3. Average -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">3. Average</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 03</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let a = 10;
+let b = 20;
+let c = 30;
+
+let average = (a + b + c) / 3;
+
+console.log(average);</code></pre>
+      </div>
+
+      <!-- 4. Square -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">4. Square</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 04</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let n = 5;
+
+let square = n * n;
+
+console.log(square);</code></pre>
+      </div>
+
+      <!-- 5. Cube -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">5. Cube</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 05</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let n = 5;
+
+let cube = n * n * n;
+
+console.log(cube);</code></pre>
+      </div>
+
+      <!-- 6. Power -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">6. Power</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 06</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let base = 2;
+let exponent = 3;
+
+let power = base ** exponent;
+
+console.log(power);</code></pre>
+      </div>
+
+      <!-- 7. Multiplication -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">7. Multiplication</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 07</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let n = 5;
+
+for (let i = 1; i &lt;= 10; i++) {
+    console.log(n * i);
+}</code></pre>
+      </div>
+
+      <!-- 8. Percentage -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">8. Percentage</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 08</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let marks = 450;
+let total = 500;
+
+let percentage = (marks / total) * 100;
+
+console.log(percentage);</code></pre>
+      </div>
+
+      <!-- 9. Simple Interest -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">9. Simple Interest</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 09</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let principal = 10000;
+let rate = 5;
+let time = 2;
+
+let simpleInterest = (principal * rate * time) / 100;
+
+console.log(simpleInterest);</code></pre>
+      </div>
+
+      <!-- 10. Reverse a Number -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-[#222431]">10. Reverse a Number</h3>
+          <span class="bg-[#FEEA63] text-xs font-semibold px-3 py-1 rounded-full">Topic 10</span>
+        </div>
+        <pre class="bg-[#222431] text-gray-100 p-4 rounded-xl text-sm font-mono overflow-x-auto leading-relaxed"><code>let number = 12345;
+let reverse = 0;
+
+while (number &gt; 0) {
+    let digit = number % 10;
+    reverse = reverse * 10 + digit;
+    number = Math.floor(number / 10);
+}
+
+console.log(reverse);</code></pre>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

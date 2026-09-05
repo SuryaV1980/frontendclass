@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML - Day 1</title>
+<title>JavaScript - Day 13</title>
 
 <style>
 
@@ -30,10 +30,18 @@ h1{
     color:#222;
 }
 
-p{
+.subtitle{
     text-align:center;
     color:#666;
-    margin-bottom:35px;
+    margin-bottom:30px;
+}
+
+.section-title{
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #333;
+    margin: 30px 0 15px;
+    text-align: left;
 }
 
 .tasks{
@@ -50,6 +58,7 @@ p{
     border-radius:10px;
     border:1px solid #ddd;
     transition:0.3s;
+    display:block;
 }
 
 .task:hover{
@@ -62,6 +71,16 @@ p{
     margin-bottom:10px;
 }
 
+.task p{
+    color:#666;
+    margin-bottom:0;
+    text-align:left;
+}
+
+.task:hover p{
+    color:rgba(255, 255, 255, 0.9);
+}
+
 .back{
     display:inline-block;
     margin-top:35px;
@@ -70,6 +89,7 @@ p{
     background:#2563eb;
     padding:10px 20px;
     border-radius:6px;
+    transition:0.3s;
 }
 
 .back:hover{
@@ -83,44 +103,50 @@ p{
 
 <div class="container">
 
-    <h1>CSS - Day 3</h1>
+    <h1>JavaScript Day-13</h1>
 
-    <p>Tasks completed during Day 3 of CSS .</p>
+    <p class="subtitle">Tasks completed during Day 13 of JS.</p>
+
+    <h2 class="section-title">Assignment</h2>
 
     <div class="tasks">
 
-        <a href="profilecard.html" class="task">
+        <a href="task1.html" class="task">
             <h3>Task 1</h3>
-            <p>Student Profile Card</p>
+            <p>JS - Simple Callback Counter</p>
         </a>
 
-        <a href="productcard.html" class="task">
+        <a href="task2.html" class="task">
             <h3>Task 2</h3>
-            <p>Product Card</p>
+            <p>JS - Simple Closure Counter</p>
         </a>
 
-        <a href="idcard.html" class="task">
+        <a href="task3.html" class="task">
             <h3>Task 3</h3>
-            <p>Employee ID Card</p>
+            <p>JS - Push and Pop</p>
         </a>
 
-        <a href="newsarticle.html" class="task">
+        <a href="task4.html" class="task">
             <h3>Task 4</h3>
-            <p>News Article Box</p>
+            <p>JS - Shift and Unshift</p>
         </a>
 
-        <a href="boxmodel.html" class="task">
+        <a href="task5.html" class="task">
             <h3>Task 5</h3>
-            <p>Mini Box Model Layout</p>
+            <p>JS - Manual Push Without push()</p>
         </a>
 
-        <a href="webpage.html" class="task">
+        <a href="task6.html" class="task">
             <h3>Task 5</h3>
-            <p>Challenge</p>
+            <p>JS - Array Methods Until concat()</p>
         </a>
     </div>
 
-    <a href="../../../index/main.html" class="back">← Back to Home</a>
+    
+
+    </div>
+
+    <a href="../../index/main.html" class="back">← Back to Home</a>
 
 </div>
 

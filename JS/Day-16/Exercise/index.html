@@ -3,47 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS - DOM Form</title>
+  <title>DOM - JS Login Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
-<body>
-  
-  <table cellpadding="10">
-    <tr>
-      <td>
-        Username: 
-      </td>
-      <td>
-        <input type="text" id="userName" placeholder="Enter your name"/>
-      </td>
-    </tr>
+<body class="bg-[#101010]">
+  <header >
+    <div class="p-8 flex justify-between items-centers">
+      <div>
+        <h2 class="text-[#dc3545] text-xl ">
+          Marshall
+        </h2>
+      </div>
+      <nav>
+        <div class="flex gap-9 items-center ">
+          <a href="#" class="text-white hover:text-[#dc3545]">NEWS</a>
+          <a href="#" class="text-white hover:text-[#dc3545]"> Music </a>
+          <a href="#" class="text-white hover:text-[#dc3545]">video</a>
+          <a href="#" class="text-white hover:text-[#dc3545]">shop</a>
+          <input class="bg-[#dc3545] w-20 h-11" type="button" value="SIGN UP" />
+        </div>
+      </nav>
+    </div>
+  </header>
 
-    <tr>
-      <td>
-        Password: 
-      </td>
-      <td>
-        <input type="text" id="userPassword" placeholder="Enter your Password"/>
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        confirm Password: 
-      </td>
-      <td>
-        <input type="text" id="userrePassword" placeholder="Enter your Password"/>
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <input type="button" id="submit" value="Register" />
-      </td>
-    </tr>
-    
-  </table>
-
-
-  <script src="assets/JS/index.js"></script>
 </body>
 </html>

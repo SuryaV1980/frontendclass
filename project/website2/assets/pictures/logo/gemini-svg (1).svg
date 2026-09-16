@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="100%" height="100%">
+  <defs>
+    <!-- Background clipping mask for the pineapple body -->
+    <clipPath id="body-silhouette">
+      <path d="M250,265 C175,265 142,325 142,420 C142,510 182,575 250,575 C318,575 358,510 358,420 C358,325 325,265 250,265 Z" />
+    </clipPath>
+
+    <!-- Star gradient -->
+    <linearGradient id="star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE08B" />
+      <stop offset="50%" stop-color="#E5A83B" />
+      <stop offset="100%" stop-color="#BF7E1D" />
+    </linearGradient>
+
+    <!-- Base scale diamond tile template -->
+    <g id="scale">
+      <!-- Outer diamond facet -->
+      <polygon points="0,-33 33,0 0,33 -33,0" fill="#F5B842" />
+      <!-- Top/Inner highlight angle -->
+      <polygon points="0,-33 33,0 18,0 0,-18 -18,0 -33,0" fill="#FCD86C" opacity="0.65" />
+      <!-- Inner cutout square/diamond -->
+      <polygon points="0,-12 12,0 0,12 -12,0" fill="#D9822B" />
+    </g>
+  </defs>
+
+  <!-- ==================== CROWN / LEAVES ==================== -->
+  <g id="crown">
+    <!-- Back Leaf - Center -->
+    <path d="M250,85 C265,140 270,195 250,265 C230,195 235,140 250,85 Z" fill="#439B2A" />
+
+    <!-- Upper-Mid Leaves -->
+    <!-- Left Mid-High -->
+    <path d="M250,265 C232,205 195,155 152,138 C175,188 202,235 242,268 Z" fill="#3D9326" />
+    <!-- Right Mid-High -->
+    <path d="M250,265 C268,205 305,155 348,138 C325,188 298,235 258,268 Z" fill="#48A62E" />
+
+    <!-- Lower Side Leaves -->
+    <!-- Left Mid-Low -->
+    <path d="M246,270 C210,215 168,188 135,185 C145,232 188,272 238,280 Z" fill="#4AA82F" />
+    <!-- Right Mid-Low -->
+    <path d="M254,270 C290,215 332,188 365,185 C355,232 312,272 262,280 Z" fill="#52B834" />
+
+    <!-- Center Foreground Overlay Leaf -->
+    <path d="M250,140 C262,185 264,228 250,275 C236,228 238,185 250,140 Z" fill="#57BD38" />
+  </g>
+
+  <!-- ==================== BODY ==================== -->
+  <g id="pineapple-body" clip-path="url(#body-silhouette)">
+    <!-- Base Underlay (Grooves Color) -->
+    <rect x="120" y="240" width="260" height="350" fill="#D9822B" />
+
+    <!-- Diamond Pattern Grid (Centered at 250, 420) -->
+    <!-- Row -3 (Top peak) -->
+    <use href="#scale" x="250" y="276" />
+
+    <!-- Row -2 -->
+    <use href="#scale" x="202" y="324" />
+    <use href="#scale" x="298" y="324" />
+
+    <!-- Row -1 -->
+    <use href="#scale" x="154" y="372" />
+    <use href="#scale" x="250" y="372" />
+    <use href="#scale" x="346" y="372" />
+
+    <!-- Row 0 (Equator) -->
+    <use href="#scale" x="106" y="420" />
+    <use href="#scale" x="202" y="420" />
+    <use href="#scale" x="298" y="420" />
+    <use href="#scale" x="394" y="420" />
+
+    <!-- Row 1 -->
+    <use href="#scale" x="154" y="468" />
+    <use href="#scale" x="250" y="468" />
+    <use href="#scale" x="346" y="468" />
+
+    <!-- Row 2 -->
+    <use href="#scale" x="202" y="516" />
+    <use href="#scale" x="298" y="516" />
+
+    <!-- Row 3 (Bottom peak) -->
+    <use href="#scale" x="250" y="564" />
+  </g>
+
+  <!-- ==================== SPARKLE / STAR ==================== -->
+  <g id="sparkle" transform="translate(372, 538)">
+    <path d="M0,-24 Q2,-3 20,0 Q2,3 0,24 Q-2,3 -20,0 Q-2,-3 0,-24 Z" fill="url(#star-grad)" />
+  </g>
+</svg>

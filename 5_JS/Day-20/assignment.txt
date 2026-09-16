@@ -1,0 +1,52 @@
+Task 1 — Callback Function
+
+const callback = () => {
+    // code
+};
+
+function example(callback) {
+    callback();
+}
+
+
+Task 2 — Promise
+
+const promise = new Promise((resolve, reject) => {
+    // code
+
+    resolve();
+    // reject();
+});
+
+
+Task 3 — Promise Handling
+
+promise
+    .then(() => {
+        // success
+    })
+    .catch(() => {
+        // error
+    })
+    .finally(() => {
+        // always runs
+    });
+
+
+Task 4 — Async / Await
+
+async function example() {
+    const result = await promise;
+}
+
+
+Task 5 — Fetch
+
+fetch("URL")
+    .then(response => response.json())
+    .then(data => {
+        // use data
+    })
+    .catch(error => {
+        // handle error
+    });

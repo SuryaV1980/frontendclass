@@ -1,15 +1,33 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Button from "./Button";
+import Input from "./input";
+import Card from "./Card";
 
-const App = (()=>{
-  return (<>
+const App = () => {
+  const [inputValue, setInputValue] = useState("");
   
-<h1>Hello universe</h1>    
-  
-  </>)
-})
+  const [cardText, setCardText] = useState("");
 
-export default App
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleButtonClick = () => {
+    setCardText(inputValue);
+  };
+
+  return (
+    <>
+     
+      <h1>Hello universe</h1>
+      <p>Type in the box below and click the button to see it on the card!</p>
+
+    
+      <Input value={inputValue} onChange={handleInputChange} />
+      <Button onClick={handleButtonClick} />
+      <Card text={cardText} />
+    </>
+  );
+};
+
+export default App;

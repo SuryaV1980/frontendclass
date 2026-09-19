@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+head{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+  text-decoration: none;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(199, 199, 36);
+}
+
+.navLink{
+  display: flex;
+  align-items: center;
+  gap:50px;
+  margin-right: 15px;
+}
+.profilecard {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  width: 400px;
+  height: 430px;
+  margin-left: 70px;
+  margin-top: 80px;
+  
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;       
+  gap: 20px;              
+}
+
+.content {
+  display: flex;
+  flex-direction: column;   
+  align-items: center;      
+  text-align: center;      
+  gap: 8px;               
+}
+.imagemark {
+  border-radius: 50%;      
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+}
+
+.button{
+  width: 75px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: skyblue;
+}
+
+.follow {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}

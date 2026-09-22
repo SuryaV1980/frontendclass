@@ -4,9 +4,8 @@ const Student = () => {
   const name     =  "Uma Maheshwari"
   const age      =   24
   const course   =  "React JS"
-  // const check = isActive? "Active": "InActive"
   const fees     =  15000 
-
+  const check = name? "Active": "InActive"
 
   return (
     <>
@@ -20,15 +19,15 @@ const Student = () => {
 
     <p>
       Age : {age}
-    </p>
+    </p> 
 
     <p>
       Course : {course}
     </p>
 
-    {/* <p>
-      {check}
-    </p> */}
+    <p>
+    Check : {check}
+    </p>
 
   
     <p>

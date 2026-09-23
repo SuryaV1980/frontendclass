@@ -79,7 +79,7 @@ const employeedata = {
 
             
             {arr.map((e,i)=>(
-              <p className="bg-white p-8 w-20 h-9 text-center flex justify-center items-center rounded-2xl"key={i+1} >{e}</p>
+              <p className="bg-white p-8 w-20 h-9 text-center flex justify-center items-center rounded-2xl" key={i+1}>{e}</p>
             ))}
 
           
@@ -116,11 +116,11 @@ const employeedata = {
 
             
             {arrobj.map((arrobj)=>(
-              <p className="bg-white p-8 w-75 h-100 flex flex-col-reverse justify-center items-center rounded-2xl"key={arrobj.Id} >
+              <div className="bg-white p-8 w-75 h-100 flex flex-col-reverse justify-center items-center rounded-2xl"key={arrobj.Id} >
 
-                <h1>Category: {arrobj.Category}</h1> <h1>Price :{arrobj.Price}</h1>  <h1>Product :{arrobj.Name}</h1> 
+               <p> Category: {arrobj.Category}</p> <p>Price :{arrobj.Price}</p>  <p>Product :{arrobj.Name}</p>
 
-              </p>
+              </div>
             ))}
 
           

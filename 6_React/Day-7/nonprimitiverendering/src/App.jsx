@@ -1,4 +1,6 @@
-import Array from "./component/Array"
+import ArrayOfObjects from "./component/ArrayOfObjects"
+import ObjectRendering from "./component/ObjectRendering"
+import ArrayRendering from "./component/ArrayRendering"
 
 const App = () => {
   return (
@@ -6,8 +8,18 @@ const App = () => {
 
   
     
-    <Array />
+    <div>
+      <ArrayRendering />
+    </div>
     
+    <div>
+      <ObjectRendering />
+    </div>
+    
+    <div>
+      <ArrayOfObjects />
+    </div>
+
     </>
   )
 }

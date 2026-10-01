@@ -1,71 +1,94 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const App = () => {
 
+  // Task 1 States
+  const [nameUser, setNameUser] = useState("");
 
-  const [userName, setUserName] = useState("")
-   const [userAge, setUserAge] = useState("")
-   const [showdata, setShowData] = useState([])
+  // Task 2 States
+  const [emailUser, setEmailUser] = useState("");
+  const [showEmail, setShowEmail] = useState("");
 
- const changeName = (event)=>{
-      setUserName (event.target.value)
 
- }
+  // Task 1 - Name Change
+  const handleName = (e) => {
 
-  const changeAge = (event)=>{
+    setNameUser(e.target.value);
 
-      setUserAge (event.target.value)
+  };
 
-  }
-  const changebutton = (event) =>{
 
-    const obj = {id:Date.now(), Name:userName ,Age:userAge}
+  // Task 2 - Email Change
+  const handleEmail = (e) => {
 
-    const arr = [...showdata]
+    setEmailUser(e.target.value);
 
-    arr.push(obj)
+  };
 
-    setShowData(arr)
-    alert("Successfully Drip")
 
-    setUserName("")
-    setUserAge("")
+  // Task 2 - Form Submit
+  const handleSubmit = (e) => {
 
-  }
+    e.preventDefault();
+
+    setShowEmail(emailUser);
+
+    setEmailUser("");
+
+  };
 
 
   return (
     <>
-    
+
+      {/* TASK 1 - NAME INPUT */}
+
       <div>
-        <input type="text" onChange={changeName} placeholder="Enter your Name" />
-        <input type="Age" onChange={changeAge} placeholder="Enter your Age" />
-        <button onClick={changebutton}>Click</button>
+
+        <h2>Task 1 - Name Input</h2>
+
+        <input
+          type="text"
+          value={nameUser}
+          onChange={handleName}
+          placeholder="Enter the Name"
+        />
+
+        <p>Name: {nameUser}</p>
+
       </div>
-    
 
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>User Name:</th>
-          <th>User Age :</th>
-        </tr>
-      </thead>
 
-        <tbody>
-          {showdata.map((e)=>(
-            <tr key={e.i}>
-                  <th>{e.userName}</th>
-                  <th>{e.userAge}</th>
-            </tr>
-          ))}
-        </tbody>
-      
-    </table>
-    
+      <hr />
+
+
+      {/* TASK 2 - EMAIL SUBMIT */}
+
+      <div>
+
+        <h2>Task 2 - Email Submit</h2>
+
+        <form onSubmit={handleSubmit}>
+
+          <input
+            type="email"
+            value={emailUser}
+            onChange={handleEmail}
+            placeholder="Enter the Email"
+          />
+
+          <button type="submit">
+            Submit
+          </button>
+
+        </form>
+
+        <p>Email: {showEmail}</p>
+
+      </div>
+
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
